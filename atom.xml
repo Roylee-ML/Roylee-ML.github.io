@@ -5,7 +5,7 @@
   <link href="/Roylee-ML.github.io/atom.xml" rel="self"/>
   
   <link href="http://error408.com/"/>
-  <updated>2016-07-14T12:58:46.000Z</updated>
+  <updated>2016-07-14T13:46:50.000Z</updated>
   <id>http://error408.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SwipeTableView 一款好用的同时支持上下与左右滑动的控件</title>
+    <title>SwipeTableView</title>
     <link href="http://error408.com/2016/07/14/SwipeTableView-%E4%B8%80%E6%AC%BE%E5%A5%BD%E7%94%A8%E7%9A%84%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81%E4%B8%8A%E4%B8%8B%E4%B8%8E%E5%B7%A6%E5%8F%B3%E6%BB%91%E5%8A%A8%E7%9A%84%E6%8E%A7%E4%BB%B6/"/>
     <id>http://error408.com/2016/07/14/SwipeTableView-一款好用的同时支持上下与左右滑动的控件/</id>
     <published>2016-07-14T09:31:11.000Z</published>
-    <updated>2016-07-14T12:58:46.000Z</updated>
+    <updated>2016-07-14T13:46:50.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView-&amp;#x4E00;&amp;#x6B3E;&amp;#x597D;&amp;#x7528;&amp;#x7684;&amp;#x540C;&amp;#x65F6;&amp;#x652F;&amp;#x6301;&amp;#x4E0A;&amp;#x4E0B;&amp;#x4E0E;&amp;#x5DE6;&amp;#x53F3;&amp;#x6ED1;&amp;#x52A8;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;/logo.png&quot; alt=&quot;LOGO&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x8FD9;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x7C7B;&amp;#x4F3C;&amp;#x534A;&amp;#x7CD6;&amp;#x9996;&amp;#x9875;&amp;#x3001;QQ&amp;#x97F3;&amp;#x4E50;&amp;#x5217;&amp;#x8868;&amp;#x3001;&amp;#x7F8E;&amp;#x4E3D;&amp;#x8BF4;&amp;#x9996;&amp;#x9875;&amp;#x3001;&amp;#x683C;&amp;#x74E6;&amp;#x65AF;&amp;#x7535;&amp;#x5F71;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#xFF0C;&amp;#x65E2;&amp;#x80FD;&amp;#x4E0A;&amp;#x4E0B;&amp;#x6ED1;&amp;#x52A8;&amp;#xFF0C;&amp;#x540C;&amp;#x65F6;&amp;#x7528;&amp;#x80FD;&amp;#x5DE6;&amp;#x53F3;&amp;#x6ED1;&amp;#x52A8;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;&amp;#x3002;&amp;#x9879;&amp;#x76EE;&amp;#x5730;&amp;#x5740;&lt;a href=&quot;https://github.com/Roylee-ML/SwipeTableView&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
@@ -55,6 +55,10 @@
     
     </summary>
     
+    
+      <category term="SwipeTableVeiw" scheme="http://error408.com/tags/SwipeTableVeiw/"/>
+    
+      <category term="模拟UIScrollView" scheme="http://error408.com/tags/%E6%A8%A1%E6%8B%9FUIScrollView/"/>
     
   </entry>
   
