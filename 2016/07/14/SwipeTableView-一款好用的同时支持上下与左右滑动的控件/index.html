@@ -13,11 +13,11 @@
 
     <title>
         
-          孟亮的博客 | Roylee&#39;s Blog
+          SwipeTableView 一款好用的同时支持上下与左右滑动的控件 - 孟亮的博客 | Roylee&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://error408.com/Roylee-ML.github.io/">
+    <link rel="canonical" href="http://error408.com/Roylee-ML.github.io/2016/07/14/SwipeTableView-一款好用的同时支持上下与左右滑动的控件/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/Roylee-ML.github.io/css/bootstrap.min.css">
@@ -140,178 +140,161 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/Roylee-ML.github.io/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/Roylee-ML.github.io/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Roylee&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">To Be A Lean Developer!</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>SwipeTableView 一款好用的同时支持上下与左右滑动的控件</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 孟亮 on
+                        2016-07-14
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>这是一个类似半糖首页、QQ音乐列表、美丽说首页、格瓦斯电影详情页，既能上下滑动，同时用能左右滑动的控件。项目地址<a href="https://github.com/Roylee-ML/SwipeTableView" target="_blank" rel="external">GitHub</a></p>
+<p><br><br>说起这个项目，还是得谈一下一开始写这个项目的缘由。前一阵子，公司项目首页改版，要求作出半糖首页的效果。看了一眼半糖之后，心中一万只草泥马奔过，怎么会做这种设计？后来，想了一天的时间，终于把大概的实现原理捋顺出来，又花了几天的时间来一步步的实现，解决bug。最后终于可以实现上下与左后滑动同时兼容的效果了。由于只是首页改版，所以只是首页实现了效果，也并没有单独写一个控件，可是，一周之后，悲剧的事发生了：新的产品设计中有几个页面都是这样的设计。好吧，还是乖乖的写个控件吧。于是，就有了<code>SwipeTableView</code>。</p>
+<p><br></p>
+<p>####先来几张预览吧：</p>
+<p><img src="https://github.com/Roylee-ML/SwipeTableView/blob/master/ScreenShots/screenshot1.gif" alt="OverView1">      <img src="https://github.com/Roylee-ML/SwipeTableView/blob/master/ScreenShots/screenshot2.gif" alt="OverView2"></p>
+<p><br></p>
+<p>####再来说一下实现原理：<br>最初的设计比没有第三方下拉刷新兼容的问题，所以最初的设计更简洁，扩展性也更好。下面是原理的结构图——</p>
+<p><img src="https://github.com/Roylee-ML/SwipeTableView/blob/master/ScreenShots/SwipeTableViewStruct1.png" alt="Model 1"></p>
+<ol>
+<li>首先，为了实现左右滑动的功能，需要一个view来作为所有单一item的父视图载体，并提供左右滑动的功能，这里没有比<code>UICollectionView</code>再合适的了。所有，我用一个CollectionView作为contentView。</li>
+<li>有了CollectionView作为载体之后，就可以把每一个ScrollView作为CollectionView的item平铺了。之后，最关键的问题，也是最难处理的问题，就是在滑动CollectionView的时候，怎样保证前后item能够对齐呢（因为悬停，只有对齐才行）？最后想到的解决办法，就是在cellForItem的方法中，对前后两个item的contentOffset进行adjust一致性调整。这样能实现前后两个item的位置是合理的。</li>
+<li>最后一个主要的问题就是，多个item共用一个header与bar的问题。既然共用，最后想到，那就让header与bar与CollectionView一样作为SwipeTableView的子视图，并别在图层最上面。由于是独立的view，之后就要解决当前item滑动同时滚动对header与bar做跟随处理的问题了。在这里，对当前的item进行KVO，在item的contentOffset发生变化的时候，同样改变header与bar的位置，使之总是跟随scrollview的滚动，并在悬停的位置做判断，固定bar的frame的y值。</li>
+<li>这样，基本的实现就完成了。同时，<code>SwipeTableView</code>允许自适应contentSize，就是在item的内容很少的时候，也能自适应的调整contentSize，保整至少能够滚动到顶端。</li>
+<li>后期，用户的反馈header不能滑动，最后通过<code>UIKitDynamic</code>物理引擎的方式解决了这个问题。<a href="http://philcai.com/2016/03/15/%E7%94%A8UIKit-Dynamics%E6%A8%A1%E4%BB%BFUIScrollView/" target="_blank" rel="external"><code>参考文章</code></a> <a href="http://holko.pl/2014/07/06/inertia-bouncing-rubber-banding-uikit-dynamics/" target="_blank" rel="external"><code>英文博客</code></a></li>
+</ol>
+<p>最初开源这个项目并没有想会很多人使用，而后期，实际用到人越来越多，大家也都反映项目不能支持下拉刷新的问题，所以，便有了第二种设计方式——</p>
+<p><img src="https://github.com/Roylee-ML/SwipeTableView/blob/master/ScreenShots/SwipeTableViewStruct2.png" alt="Model 2"></p>
+<p>在这个版本中，跟上面的结构原理是差不多的。由于header与bar是独立的，那么每个item就要为header与bar的空间留出空白。而在第一个设计中，是通过修改增加每个item contentInset的top值来留出顶部的留白。而几乎所有的下拉刷新空间都是不考虑inset，直接设置在content的顶部的，而contentInset是不算内容中的（一般下拉刷新控件rame的y值都是自身高度的负值）。所以，在添加了下拉刷新之后，下拉刷新组件其实是藏在header与bar的下面的，底部也正好跟bar对齐（这里可以通过调整下拉刷新组件的frame，减小y值，来显露下拉组件即可）。</p>
+<p>为了方便使用，并且兼容第三方下拉刷新，最后采用，每个item顶部的留白由tableHeaderVeiw代替（CollectionView方面要继承<code>STCollectionView</code>设置collectionHeaderView）。不过这样，item的tableHeaderView就是占用的了，由于考虑项目的简洁性，并没有自定义<code>UIScrollView</code>支持scrollview设置headerview。这样用户完全可以只是通过设置一个宏就可以支持下拉刷新，更加方便<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@define ST_PULLTOREFRESH_HEADER_HEIGHT xx</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>其中<code>xx</code>是指下拉刷新组件RefreshHeader的高度，也就是完全显露RefreshHeader开始刷新的高度（如：<code>MJRefresh</code> 为 <code>MJRefreshHeaderHeight</code>，<code>SVPullToRefresh</code> 为 <code>SVPullToRefreshViewHeight</code>）。</p>
+</blockquote>
+<p>最后在混合模式的时候出现了问题，最终发现，原来<code>UICollectionView</code>不支持通过contentSize属性来改变contentSize。最后只好自定义<code>STCollectionView</code>，同时支持设置collectionHeaderView，同时可以实现自适应contentSize。关于<code>STCollectionView</code>的使用可以详细看github示例。</p>
+<p>####总结<br>这是我的第一个比较完善的开源项目，在这个项目中，非常感谢使用者的认同与支持。通过这个项目，自己确实学到了很多东西，其实开这个博客也是源于这个项目的。个人觉得，对于开发者而言，能够参与一个项目，并去不断的完善解决问题，从中得到的受益将是非常大的。</p>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/Roylee-ML.github.io/2016/07/14/SwipeTableView-一款好用的同时支持上下与左右滑动的控件/">
-        <h2 class="post-title">
-            SwipeTableView 一款好用的同时支持上下与左右滑动的控件
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            这是一个类似半糖首页、QQ音乐列表、美丽说首页、格瓦斯电影详情页，既能上下滑动，同时用能左右滑动的控件。项目地址GitHub
-说起这个项目，还是得谈一下一开始写这个项目的缘由。前一阵子，公司项目首页改版，要求作出半糖首页的效果。看了一眼半糖之后，心中一万只草泥马奔过，怎么会做这种设计？后来，想了一天的时间，终于把大概的实现原理捋顺出来，又花了几天的时间来一步步的实现，解决bug。最后终于可以......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 孟亮 on
-        2016-07-14
-    </p>
+                
 
-</div>
-<hr>
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/Roylee-ML.github.io/2016/07/05/我的iOS开发之路/" data-toggle="tooltip" data-placement="top" title="开始我的博客生涯">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-<div class="post-preview">
+                
 
-    <a href="/Roylee-ML.github.io/2016/07/05/我的iOS开发之路/">
-        <h2 class="post-title">
-            开始我的博客生涯
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 孟亮 on
-        2016-07-05
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
+                
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/Roylee-ML.github.io/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+                       
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/Roylee-ML.github.io/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/Roylee-ML.github.io//img/avatar.jpg" />
-                        
-
-                        
-                            <p>We have only once life!</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/2921432255">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.facebook.com/100011770908979">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/Roylee-ML">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
