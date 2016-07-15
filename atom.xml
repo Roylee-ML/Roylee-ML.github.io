@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Roylee&#39;s Blog</title>
   <subtitle>To Be A Lean Developer!</subtitle>
-  <link href="/Roylee-ML.github.io/atom.xml" rel="self"/>
+  <link href="/roylee/atom.xml" rel="self"/>
   
-  <link href="http://error408.com/"/>
+  <link href="http://roylee.coding.me/"/>
   <updated>2016-07-15T01:22:05.000Z</updated>
-  <id>http://error408.com/</id>
+  <id>http://roylee.coding.me/</id>
   
   <author>
     <name>孟亮</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hexo搭建</title>
-    <link href="http://error408.com/2016/07/15/Hexo%E6%90%AD%E5%BB%BA/"/>
-    <id>http://error408.com/2016/07/15/Hexo搭建/</id>
+    <link href="http://roylee.coding.me/2016/07/15/Hexo%E6%90%AD%E5%BB%BA/"/>
+    <id>http://roylee.coding.me/2016/07/15/Hexo搭建/</id>
     <published>2016-07-15T01:22:05.000Z</published>
     <updated>2016-07-15T01:22:05.000Z</updated>
     
@@ -33,19 +33,19 @@
   
   <entry>
     <title>SwipeTableView</title>
-    <link href="http://error408.com/2016/07/14/SwipeTableView/"/>
-    <id>http://error408.com/2016/07/14/SwipeTableView/</id>
+    <link href="http://roylee.coding.me/2016/07/14/SwipeTableView/"/>
+    <id>http://roylee.coding.me/2016/07/14/SwipeTableView/</id>
     <published>2016-07-14T09:31:11.000Z</published>
     <updated>2016-07-15T05:48:11.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView/logo.png&quot; alt=&quot;LOGO&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/roylee/2016/07/14/SwipeTableView/logo.png&quot; alt=&quot;LOGO&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x8FD9;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x7C7B;&amp;#x4F3C;&amp;#x534A;&amp;#x7CD6;&amp;#x9996;&amp;#x9875;&amp;#x3001;QQ&amp;#x97F3;&amp;#x4E50;&amp;#x5217;&amp;#x8868;&amp;#x3001;&amp;#x7F8E;&amp;#x4E3D;&amp;#x8BF4;&amp;#x9996;&amp;#x9875;&amp;#x3001;&amp;#x683C;&amp;#x74E6;&amp;#x65AF;&amp;#x7535;&amp;#x5F71;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#xFF0C;&amp;#x65E2;&amp;#x80FD;&amp;#x4E0A;&amp;#x4E0B;&amp;#x6ED1;&amp;#x52A8;&amp;#xFF0C;&amp;#x540C;&amp;#x65F6;&amp;#x7528;&amp;#x80FD;&amp;#x5DE6;&amp;#x53F3;&amp;#x6ED1;&amp;#x52A8;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;&amp;#x3002;&amp;#x9879;&amp;#x76EE;&amp;#x5730;&amp;#x5740;&lt;a href=&quot;https://github.com/Roylee-ML/SwipeTableView&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&amp;#x8BF4;&amp;#x8D77;&amp;#x8FD9;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#xFF0C;&amp;#x8FD8;&amp;#x662F;&amp;#x5F97;&amp;#x8C08;&amp;#x4E00;&amp;#x4E0B;&amp;#x4E00;&amp;#x5F00;&amp;#x59CB;&amp;#x5199;&amp;#x8FD9;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#x7684;&amp;#x7F18;&amp;#x7531;&amp;#x3002;&amp;#x524D;&amp;#x4E00;&amp;#x9635;&amp;#x5B50;&amp;#xFF0C;&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x9996;&amp;#x9875;&amp;#x6539;&amp;#x7248;&amp;#xFF0C;&amp;#x8981;&amp;#x6C42;&amp;#x4F5C;&amp;#x51FA;&amp;#x534A;&amp;#x7CD6;&amp;#x9996;&amp;#x9875;&amp;#x7684;&amp;#x6548;&amp;#x679C;&amp;#x3002;&amp;#x770B;&amp;#x4E86;&amp;#x4E00;&amp;#x773C;&amp;#x534A;&amp;#x7CD6;&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x5FC3;&amp;#x4E2D;&amp;#x4E00;&amp;#x4E07;&amp;#x53EA;&amp;#x8349;&amp;#x6CE5;&amp;#x9A6C;&amp;#x5954;&amp;#x8FC7;&amp;#xFF0C;&amp;#x600E;&amp;#x4E48;&amp;#x4F1A;&amp;#x505A;&amp;#x8FD9;&amp;#x79CD;&amp;#x8BBE;&amp;#x8BA1;&amp;#xFF1F;&amp;#x540E;&amp;#x6765;&amp;#xFF0C;&amp;#x60F3;&amp;#x4E86;&amp;#x4E00;&amp;#x5929;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#xFF0C;&amp;#x7EC8;&amp;#x4E8E;&amp;#x628A;&amp;#x5927;&amp;#x6982;&amp;#x7684;&amp;#x5B9E;&amp;#x73B0;&amp;#x539F;&amp;#x7406;&amp;#x634B;&amp;#x987A;&amp;#x51FA;&amp;#x6765;&amp;#xFF0C;&amp;#x53C8;&amp;#x82B1;&amp;#x4E86;&amp;#x51E0;&amp;#x5929;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#x6765;&amp;#x4E00;&amp;#x6B65;&amp;#x6B65;&amp;#x7684;&amp;#x5B9E;&amp;#x73B0;&amp;#xFF0C;&amp;#x89E3;&amp;#x51B3;bug&amp;#x3002;&amp;#x6700;&amp;#x540E;&amp;#x7EC8;&amp;#x4E8E;&amp;#x53EF;&amp;#x4EE5;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E0A;&amp;#x4E0B;&amp;#x4E0E;&amp;#x5DE6;&amp;#x540E;&amp;#x6ED1;&amp;#x52A8;&amp;#x540C;&amp;#x65F6;&amp;#x517C;&amp;#x5BB9;&amp;#x7684;&amp;#x6548;&amp;#x679C;&amp;#x4E86;&amp;#x3002;&amp;#x7531;&amp;#x4E8E;&amp;#x53EA;&amp;#x662F;&amp;#x9996;&amp;#x9875;&amp;#x6539;&amp;#x7248;&amp;#xFF0C;&amp;#x6240;&amp;#x4EE5;&amp;#x53EA;&amp;#x662F;&amp;#x9996;&amp;#x9875;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E86;&amp;#x6548;&amp;#x679C;&amp;#xFF0C;&amp;#x4E5F;&amp;#x5E76;&amp;#x6CA1;&amp;#x6709;&amp;#x5355;&amp;#x72EC;&amp;#x5199;&amp;#x4E00;&amp;#x4E2A;&amp;#x63A7;&amp;#x4EF6;&amp;#xFF0C;&amp;#x53EF;&amp;#x662F;&amp;#xFF0C;&amp;#x4E00;&amp;#x5468;&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x60B2;&amp;#x5267;&amp;#x7684;&amp;#x4E8B;&amp;#x53D1;&amp;#x751F;&amp;#x4E86;&amp;#xFF1A;&amp;#x65B0;&amp;#x7684;&amp;#x4EA7;&amp;#x54C1;&amp;#x8BBE;&amp;#x8BA1;&amp;#x4E2D;&amp;#x6709;&amp;#x51E0;&amp;#x4E2A;&amp;#x9875;&amp;#x9762;&amp;#x90FD;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x8BBE;&amp;#x8BA1;&amp;#x3002;&amp;#x597D;&amp;#x5427;&amp;#xFF0C;&amp;#x8FD8;&amp;#x662F;&amp;#x4E56;&amp;#x4E56;&amp;#x7684;&amp;#x5199;&amp;#x4E2A;&amp;#x63A7;&amp;#x4EF6;&amp;#x5427;&amp;#x3002;&amp;#x4E8E;&amp;#x662F;&amp;#xFF0C;&amp;#x5C31;&amp;#x6709;&amp;#x4E86;&lt;code&gt;SwipeTableView&lt;/code&gt;&amp;#x3002;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h4 id=&quot;&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&quot;&gt;&lt;a href=&quot;#&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&quot;&gt;&lt;/a&gt;&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView/screenshot1.gif&quot; alt=&quot;OverView1&quot;&gt; &lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView/screenshot2.gif&quot; alt=&quot;OverView2&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&quot;&gt;&lt;a href=&quot;#&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&quot;&gt;&lt;/a&gt;&amp;#x5148;&amp;#x6765;&amp;#x51E0;&amp;#x5F20;&amp;#x9884;&amp;#x89C8;&amp;#x5427;&amp;#xFF1A;&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/roylee/2016/07/14/SwipeTableView/screenshot1.gif&quot; alt=&quot;OverView1&quot;&gt; &lt;img src=&quot;/roylee/2016/07/14/SwipeTableView/screenshot2.gif&quot; alt=&quot;OverView2&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h4 id=&quot;&amp;#x518D;&amp;#x6765;&amp;#x8BF4;&amp;#x4E00;&amp;#x4E0B;&amp;#x5B9E;&amp;#x73B0;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&quot;&gt;&lt;a href=&quot;#&amp;#x518D;&amp;#x6765;&amp;#x8BF4;&amp;#x4E00;&amp;#x4E0B;&amp;#x5B9E;&amp;#x73B0;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x518D;&amp;#x6765;&amp;#x8BF4;&amp;#x4E00;&amp;#x4E0B;&amp;#x5B9E;&amp;#x73B0;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&quot;&gt;&lt;/a&gt;&amp;#x518D;&amp;#x6765;&amp;#x8BF4;&amp;#x4E00;&amp;#x4E0B;&amp;#x5B9E;&amp;#x73B0;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt; &amp;#x6700;&amp;#x521D;&amp;#x7684;&amp;#x8BBE;&amp;#x8BA1;&amp;#x5E76;&amp;#x6CA1;&amp;#x6709;&amp;#x8003;&amp;#x8651;&amp;#x517C;&amp;#x5BB9;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x7684;&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x6240;&amp;#x4EE5;&amp;#x6700;&amp;#x521D;&amp;#x7684;&amp;#x8BBE;&amp;#x8BA1;&amp;#x66F4;&amp;#x7B80;&amp;#x6D01;&amp;#xFF0C;&amp;#x6269;&amp;#x5C55;&amp;#x6027;&amp;#x4E5F;&amp;#x66F4;&amp;#x597D;&amp;#x3002;&amp;#x4E0B;&amp;#x9762;&amp;#x662F;&amp;#x539F;&amp;#x7406;&amp;#x7684;&amp;#x7ED3;&amp;#x6784;&amp;#x56FE;&amp;#x2014;&amp;#x2014; &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView/SwipeTableViewStruct1.png&quot; alt=&quot;Model 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/roylee/2016/07/14/SwipeTableView/SwipeTableViewStruct1.png&quot; alt=&quot;Model 1&quot;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&amp;#x9996;&amp;#x5148;&amp;#xFF0C;&amp;#x4E3A;&amp;#x4E86;&amp;#x5B9E;&amp;#x73B0;&amp;#x5DE6;&amp;#x53F3;&amp;#x6ED1;&amp;#x52A8;&amp;#x7684;&amp;#x529F;&amp;#x80FD;&amp;#xFF0C;&amp;#x9700;&amp;#x8981;&amp;#x4E00;&amp;#x4E2A;view&amp;#x6765;&amp;#x4F5C;&amp;#x4E3A;&amp;#x6240;&amp;#x6709;&amp;#x5355;&amp;#x4E00;item&amp;#x7684;&amp;#x7236;&amp;#x89C6;&amp;#x56FE;&amp;#x8F7D;&amp;#x4F53;&amp;#xFF0C;&amp;#x5E76;&amp;#x63D0;&amp;#x4F9B;&amp;#x5DE6;&amp;#x53F3;&amp;#x6ED1;&amp;#x52A8;&amp;#x7684;&amp;#x529F;&amp;#x80FD;&amp;#xFF0C;&amp;#x8FD9;&amp;#x91CC;&amp;#x6CA1;&amp;#x6709;&amp;#x6BD4;&lt;code&gt;UICollectionView&lt;/code&gt;&amp;#x518D;&amp;#x5408;&amp;#x9002;&amp;#x7684;&amp;#x4E86;&amp;#x3002;&amp;#x6240;&amp;#x6709;&amp;#xFF0C;&amp;#x6211;&amp;#x7528;&amp;#x4E00;&amp;#x4E2A;CollectionView&amp;#x4F5C;&amp;#x4E3A;contentView&amp;#x3002;&lt;/li&gt;
 &lt;li&gt;&amp;#x6709;&amp;#x4E86;CollectionView&amp;#x4F5C;&amp;#x4E3A;&amp;#x8F7D;&amp;#x4F53;&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x628A;&amp;#x6BCF;&amp;#x4E00;&amp;#x4E2A;ScrollView&amp;#x4F5C;&amp;#x4E3A;CollectionView&amp;#x7684;item&amp;#x5E73;&amp;#x94FA;&amp;#x4E86;&amp;#x3002;&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6700;&amp;#x5173;&amp;#x952E;&amp;#x7684;&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x4E5F;&amp;#x662F;&amp;#x6700;&amp;#x96BE;&amp;#x5904;&amp;#x7406;&amp;#x7684;&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5728;&amp;#x6ED1;&amp;#x52A8;CollectionView&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#xFF0C;&amp;#x600E;&amp;#x6837;&amp;#x4FDD;&amp;#x8BC1;&amp;#x524D;&amp;#x540E;item&amp;#x80FD;&amp;#x591F;&amp;#x5BF9;&amp;#x9F50;&amp;#x5462;&amp;#xFF08;&amp;#x56E0;&amp;#x4E3A;&amp;#x60AC;&amp;#x505C;&amp;#xFF0C;&amp;#x53EA;&amp;#x6709;&amp;#x5BF9;&amp;#x9F50;&amp;#x624D;&amp;#x884C;&amp;#xFF09;&amp;#xFF1F;&amp;#x6700;&amp;#x540E;&amp;#x60F3;&amp;#x5230;&amp;#x7684;&amp;#x89E3;&amp;#x51B3;&amp;#x529E;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5728;cellForItem&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x4E2D;&amp;#xFF0C;&amp;#x5BF9;&amp;#x524D;&amp;#x540E;&amp;#x4E24;&amp;#x4E2A;item&amp;#x7684;contentOffset&amp;#x8FDB;&amp;#x884C;adjust&amp;#x4E00;&amp;#x81F4;&amp;#x6027;&amp;#x8C03;&amp;#x6574;&amp;#x3002;&amp;#x8FD9;&amp;#x6837;&amp;#x80FD;&amp;#x5B9E;&amp;#x73B0;&amp;#x524D;&amp;#x540E;&amp;#x4E24;&amp;#x4E2A;item&amp;#x7684;&amp;#x4F4D;&amp;#x7F6E;&amp;#x662F;&amp;#x5408;&amp;#x7406;&amp;#x7684;&amp;#x3002;&lt;/li&gt;
@@ -54,7 +54,7 @@
 &lt;li&gt;&amp;#x540E;&amp;#x671F;&amp;#xFF0C;&amp;#x7528;&amp;#x6237;&amp;#x7684;&amp;#x53CD;&amp;#x9988;header&amp;#x4E0D;&amp;#x80FD;&amp;#x6ED1;&amp;#x52A8;&amp;#xFF0C;&amp;#x6700;&amp;#x540E;&amp;#x901A;&amp;#x8FC7;&lt;code&gt;UIKitDynamic&lt;/code&gt;&amp;#x7269;&amp;#x7406;&amp;#x5F15;&amp;#x64CE;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x89E3;&amp;#x51B3;&amp;#x4E86;&amp;#x8FD9;&amp;#x4E2A;&amp;#x95EE;&amp;#x9898;&amp;#x3002;&lt;a href=&quot;http://philcai.com/2016/03/15/%E7%94%A8UIKit-Dynamics%E6%A8%A1%E4%BB%BFUIScrollView/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;&amp;#x53C2;&amp;#x8003;&amp;#x6587;&amp;#x7AE0;&lt;/code&gt;&lt;/a&gt; &lt;a href=&quot;http://holko.pl/2014/07/06/inertia-bouncing-rubber-banding-uikit-dynamics/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;&amp;#x82F1;&amp;#x6587;&amp;#x535A;&amp;#x5BA2;&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt; &amp;#x6700;&amp;#x521D;&amp;#x5F00;&amp;#x6E90;&amp;#x8FD9;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#x5E76;&amp;#x6CA1;&amp;#x6709;&amp;#x60F3;&amp;#x4F1A;&amp;#x5F88;&amp;#x591A;&amp;#x4EBA;&amp;#x4F7F;&amp;#x7528;&amp;#xFF0C;&amp;#x800C;&amp;#x540E;&amp;#x671F;&amp;#xFF0C;&amp;#x5B9E;&amp;#x9645;&amp;#x7528;&amp;#x5230;&amp;#x4EBA;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x591A;&amp;#xFF0C;&amp;#x5927;&amp;#x5BB6;&amp;#x4E5F;&amp;#x90FD;&amp;#x53CD;&amp;#x6620;&amp;#x9879;&amp;#x76EE;&amp;#x4E0D;&amp;#x80FD;&amp;#x652F;&amp;#x6301;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x7684;&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x6240;&amp;#x4EE5;&amp;#xFF0C;&amp;#x4FBF;&amp;#x6709;&amp;#x4E86;&amp;#x7B2C;&amp;#x4E8C;&amp;#x79CD;&amp;#x8BBE;&amp;#x8BA1;&amp;#x65B9;&amp;#x5F0F;&amp;#x2014;&amp;#x2014; &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView/SwipeTableViewStruct2.png&quot; alt=&quot;Model 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/roylee/2016/07/14/SwipeTableView/SwipeTableViewStruct2.png&quot; alt=&quot;Model 2&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x5728;&amp;#x8FD9;&amp;#x4E2A;&amp;#x7248;&amp;#x672C;&amp;#x4E2D;&amp;#xFF0C;&amp;#x8DDF;&amp;#x4E0A;&amp;#x9762;&amp;#x7684;&amp;#x7ED3;&amp;#x6784;&amp;#x539F;&amp;#x7406;&amp;#x662F;&amp;#x5DEE;&amp;#x4E0D;&amp;#x591A;&amp;#x7684;&amp;#x3002;&amp;#x7531;&amp;#x4E8E;header&amp;#x4E0E;bar&amp;#x662F;&amp;#x72EC;&amp;#x7ACB;&amp;#x7684;&amp;#xFF0C;&amp;#x90A3;&amp;#x4E48;&amp;#x6BCF;&amp;#x4E2A;item&amp;#x5C31;&amp;#x8981;&amp;#x4E3A;header&amp;#x4E0E;bar&amp;#x7684;&amp;#x7A7A;&amp;#x95F4;&amp;#x7559;&amp;#x51FA;&amp;#x7A7A;&amp;#x767D;&amp;#x3002;&amp;#x800C;&amp;#x5728;&amp;#x7B2C;&amp;#x4E00;&amp;#x4E2A;&amp;#x8BBE;&amp;#x8BA1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x662F;&amp;#x901A;&amp;#x8FC7;&amp;#x4FEE;&amp;#x6539;&amp;#x589E;&amp;#x52A0;&amp;#x6BCF;&amp;#x4E2A;item contentInset&amp;#x7684;top&amp;#x503C;&amp;#x6765;&amp;#x7559;&amp;#x51FA;&amp;#x9876;&amp;#x90E8;&amp;#x7684;&amp;#x7559;&amp;#x767D;&amp;#x3002;&amp;#x800C;&amp;#x51E0;&amp;#x4E4E;&amp;#x6240;&amp;#x6709;&amp;#x7684;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x7A7A;&amp;#x95F4;&amp;#x90FD;&amp;#x662F;&amp;#x4E0D;&amp;#x8003;&amp;#x8651;inset&amp;#xFF0C;&amp;#x76F4;&amp;#x63A5;&amp;#x8BBE;&amp;#x7F6E;&amp;#x5728;content&amp;#x7684;&amp;#x9876;&amp;#x90E8;&amp;#x7684;&amp;#xFF0C;&amp;#x800C;contentInset&amp;#x662F;&amp;#x4E0D;&amp;#x7B97;&amp;#x5185;&amp;#x5BB9;&amp;#x4E2D;&amp;#x7684;&amp;#xFF08;&amp;#x4E00;&amp;#x822C;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x63A7;&amp;#x4EF6;rame&amp;#x7684;y&amp;#x503C;&amp;#x90FD;&amp;#x662F;&amp;#x81EA;&amp;#x8EAB;&amp;#x9AD8;&amp;#x5EA6;&amp;#x7684;&amp;#x8D1F;&amp;#x503C;&amp;#xFF09;&amp;#x3002;&amp;#x6240;&amp;#x4EE5;&amp;#xFF0C;&amp;#x5728;&amp;#x6DFB;&amp;#x52A0;&amp;#x4E86;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x7EC4;&amp;#x4EF6;&amp;#x5176;&amp;#x5B9E;&amp;#x662F;&amp;#x85CF;&amp;#x5728;header&amp;#x4E0E;bar&amp;#x7684;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&amp;#xFF0C;&amp;#x5E95;&amp;#x90E8;&amp;#x4E5F;&amp;#x6B63;&amp;#x597D;&amp;#x8DDF;bar&amp;#x5BF9;&amp;#x9F50;&amp;#xFF08;&amp;#x8FD9;&amp;#x91CC;&amp;#x53EF;&amp;#x4EE5;&amp;#x901A;&amp;#x8FC7;&amp;#x8C03;&amp;#x6574;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#x7EC4;&amp;#x4EF6;&amp;#x7684;frame&amp;#xFF0C;&amp;#x51CF;&amp;#x5C0F;y&amp;#x503C;&amp;#xFF0C;&amp;#x6765;&amp;#x663E;&amp;#x9732;&amp;#x4E0B;&amp;#x62C9;&amp;#x7EC4;&amp;#x4EF6;&amp;#x5373;&amp;#x53EF;&amp;#xFF09;&amp;#x3002;&lt;/p&gt;
 &lt;p&gt;&amp;#x4E3A;&amp;#x4E86;&amp;#x65B9;&amp;#x4FBF;&amp;#x4F7F;&amp;#x7528;&amp;#xFF0C;&amp;#x5E76;&amp;#x4E14;&amp;#x517C;&amp;#x5BB9;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#xFF0C;&amp;#x6700;&amp;#x540E;&amp;#x91C7;&amp;#x7528;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4E2A;item&amp;#x9876;&amp;#x90E8;&amp;#x7684;&amp;#x7559;&amp;#x767D;&amp;#x7531;tableHeaderVeiw&amp;#x4EE3;&amp;#x66FF;&amp;#xFF08;CollectionView&amp;#x65B9;&amp;#x9762;&amp;#x8981;&amp;#x7EE7;&amp;#x627F;&lt;code&gt;STCollectionView&lt;/code&gt;&amp;#x8BBE;&amp;#x7F6E;collectionHeaderView&amp;#xFF09;&amp;#x3002;&amp;#x4E0D;&amp;#x8FC7;&amp;#x8FD9;&amp;#x6837;&amp;#xFF0C;item&amp;#x7684;tableHeaderView&amp;#x5C31;&amp;#x662F;&amp;#x5360;&amp;#x7528;&amp;#x7684;&amp;#x4E86;&amp;#xFF0C;&amp;#x7531;&amp;#x4E8E;&amp;#x8003;&amp;#x8651;&amp;#x9879;&amp;#x76EE;&amp;#x7684;&amp;#x7B80;&amp;#x6D01;&amp;#x6027;&amp;#xFF0C;&amp;#x5E76;&amp;#x6CA1;&amp;#x6709;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&lt;code&gt;UIScrollView&lt;/code&gt;&amp;#x652F;&amp;#x6301;scrollview&amp;#x8BBE;&amp;#x7F6E;headerview&amp;#x3002;&amp;#x8FD9;&amp;#x6837;&amp;#x7528;&amp;#x6237;&amp;#x5B8C;&amp;#x5168;&amp;#x53EF;&amp;#x4EE5;&amp;#x53EA;&amp;#x662F;&amp;#x901A;&amp;#x8FC7;&amp;#x8BBE;&amp;#x7F6E;&amp;#x4E00;&amp;#x4E2A;&amp;#x5B8F;&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x652F;&amp;#x6301;&amp;#x4E0B;&amp;#x62C9;&amp;#x5237;&amp;#x65B0;&amp;#xFF0C;&amp;#x66F4;&amp;#x52A0;&amp;#x65B9;&amp;#x4FBF;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;@define ST_PULLTOREFRESH_HEADER_HEIGHT xx&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -67,22 +67,22 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/Roylee-ML.github.io/2016/07/14/SwipeTableView/logo.png&quot; alt=&quot;LOGO&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;#x8FD9;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x7C7B;&amp;#x4F3C;&amp;#x
+      &lt;p&gt;&lt;img src=&quot;/roylee/2016/07/14/SwipeTableView/logo.png&quot; alt=&quot;LOGO&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x8FD9;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x7C7B;&amp;#x4F3C;&amp;#x534A;&amp;#x7CD6;
     
     </summary>
     
     
-      <category term="SwipeTableVeiw" scheme="http://error408.com/tags/SwipeTableVeiw/"/>
+      <category term="SwipeTableVeiw" scheme="http://roylee.coding.me/tags/SwipeTableVeiw/"/>
     
-      <category term="模拟UIScrollView" scheme="http://error408.com/tags/%E6%A8%A1%E6%8B%9FUIScrollView/"/>
+      <category term="模拟UIScrollView" scheme="http://roylee.coding.me/tags/%E6%A8%A1%E6%8B%9FUIScrollView/"/>
     
   </entry>
   
   <entry>
     <title>从汽车修理工到iOS开发</title>
-    <link href="http://error408.com/2016/07/05/%E6%88%91%E7%9A%84iOS%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
-    <id>http://error408.com/2016/07/05/我的iOS开发之路/</id>
+    <link href="http://roylee.coding.me/2016/07/05/%E6%88%91%E7%9A%84iOS%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+    <id>http://roylee.coding.me/2016/07/05/我的iOS开发之路/</id>
     <published>2016-07-05T15:35:02.000Z</published>
     <updated>2016-07-15T05:42:05.000Z</updated>
     
@@ -105,7 +105,7 @@
     </summary>
     
     
-      <category term="iOS开发" scheme="http://error408.com/tags/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS开发" scheme="http://roylee.coding.me/tags/iOS%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
