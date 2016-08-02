@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A blog of roylee，一个半路出家的iOS Coder的技术之路">
+    <meta name="keyword"  content="Personal blog，iOS，Developer，Coder，博客，iOS开发，技术">
+    <link rel="shortcut icon" href="/Roylee-ML.github.io/img/favicon.ico">
+
+    <title>
+        
+          Hexo七牛图床使用 - Roylee Blog From A iOS Developer
+        
+    </title>
+
+    <link rel="canonical" href="http://error408.com/Roylee-ML.github.io/2016/08/02/Hexo七牛图床使用/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <meta name="baidu-site-verification" content="zeyFn1s9OY" />
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Roylee-ML.github.io/">Roylee&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/Roylee-ML.github.io/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/Roylee-ML.github.io/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/Roylee-ML.github.io/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/Roylee-ML.github.io/img/info-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#Hexo" title="Hexo">Hexo</a>
+                        
+                    </div>
+                    <h1>Hexo七牛图床使用</h1>
+                    <h2 class="subheading">自定义修改插件，更便捷的使用七牛空间</h2>
+                    <span class="meta">
+                        Posted by Roylee on
+                        2016-08-02
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x4F7F;&#x7528;&#x535A;&#x5BA2;&#x4E00;&#x76F4;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x56FE;&#x7247;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x3002;&#x73B0;&#x5728;&#x57DF;&#x540D;&#x7684;&#x5907;&#x6848;&#x7EC8;&#x4E8E;&#x4E0B;&#x6765;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x7740;&#x4F7F;&#x7528;&#x4E03;&#x725B;&#x4F5C;&#x4E3A;&#x535A;&#x5BA2;&#x7684;&#x56FE;&#x5E8A;&#x4E86;&#x3002;</p>
+<h4 id="&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E03;&#x725B;"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E03;&#x725B;" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E03;&#x725B;"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E03;&#x725B;</h4><p>&#x4E03;&#x725B;&#x5728;&#x56FD;&#x5185;&#x4E91;&#x5B58;&#x50A8;&#x4E0A;&#x505A;&#x7684;&#x662F;&#x5F88;&#x5389;&#x5BB3;&#x7684;&#x4E86;&#x3002;&#x8FD9;&#x4E9B;&#x4E0D;&#x662F;&#x91CD;&#x70B9;&#xFF0C;&#x91CD;&#x70B9;&#x662F;&#x4E03;&#x725B;&#x7684;&#x514D;&#x8D39;&#x989D;&#x5EA6;&#x554A;&#xFF1A;<br></p>
+<ul>
+<li>10GB &#x6C38;&#x4E45;&#x514D;&#x8D39;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;</li>
+<li>&#x6BCF;&#x6708;10GB &#x4E0B;&#x8F7D;&#x6D41;&#x91CF;</li>
+<li>&#x6BCF;&#x6708;10 &#x4E07;&#x6B21; Put &#x8BF7;&#x6C42;</li>
+<li>&#x6BCF;&#x6708;100 &#x4E07;&#x6B21; Get &#x8BF7;&#x6C42;</li>
+</ul>
+<p>&#x8FD9;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x6765;&#x8BF4;&#xFF0C;&#x5B8C;&#x5168;&#x8DB3;&#x591F;&#x4E86;&#x3002;&#xFF08;<em>&#x9664;&#x975E;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x5F88;&#x5927;&#xFF0C;&#x8BBF;&#x95EE;&#x91CF;&#x4E5F;&#x5F88;&#x9AD8;</em>&#xFF09;</p>
+<h4 id="&#x914D;&#x7F6E;&#x4E03;&#x725B;&#x505A;&#x56FE;&#x5E8A;"><a href="#&#x914D;&#x7F6E;&#x4E03;&#x725B;&#x505A;&#x56FE;&#x5E8A;" class="headerlink" title="&#x914D;&#x7F6E;&#x4E03;&#x725B;&#x505A;&#x56FE;&#x5E8A;"></a>&#x914D;&#x7F6E;&#x4E03;&#x725B;&#x505A;&#x56FE;&#x5E8A;</h4><p>&#x4F7F;&#x7528;&#x4E03;&#x725B;&#x4E91;&#x5B58;&#x50A8;&#x6765;&#x4F5C;&#x4E3A;&#x81EA;&#x5DF1;&#x56FE;&#x7247;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x9996;&#x5148;&#x6CE8;&#x518C;&#x4E03;&#x725B;&#x8D26;&#x53F7;&#xFF08;<a href="http://www.qiniu.com/" target="_blank" rel="external">&#x6CE8;&#x518C;&#x5730;&#x5740;</a>&#xFF09;&#xFF0C;&#x6309;&#x7167;&#x6D41;&#x7A0B;&#x6CE8;&#x518C;&#x5C31;&#x597D;&#x4E86;&#x3002;&#x4E4B;&#x540E;&#x767B;&#x9646;&#x4E03;&#x725B;&#x8D26;&#x53F7;&#xFF0C;&#x5728;&#x6DFB;&#x52A0;&#x8D44;&#x6E90;&#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x56FE;&#x7247;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x3002;</p>
+<blockquote>
+<p>&#x4E03;&#x725B;&#x4F1A;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x57DF;&#x540D;&#xFF0C;&#x4F5C;&#x4E3A;&#x56FE;&#x7247;&#x7684;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#x3002;&#x53EF;&#x4EE5;&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x4E8C;&#x7EA7;&#x57DF;&#x540D;&#x3002;&#x8FD9;&#x91CC;&#xFF0C;&#x8981;&#x6C42;&#x57DF;&#x540D;&#x662F;&#x5907;&#x6848;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x8FD9;&#x6837;&#x4E03;&#x725B;&#x7A7A;&#x95F4;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5F00;&#x59CB;&#x96C6;&#x6210;&#x63D2;&#x4EF6;&#xFF1A;</p>
+<h5 id="hexo-asset-image"><a href="#hexo-asset-image" class="headerlink" title="hexo-asset-image"></a>hexo-asset-image</h5><p>&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;<a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">hexo-asset-image</a>&#x63D2;&#x4EF6;&#x3002;</p>
+<blockquote>
+<p>&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x5728;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5F88;&#x662F;&#x65B9;&#x4FBF;&#xFF0C;&#x56FE;&#x7247;&#x53EA;&#x9700;&#x8981;&#x653E;&#x5728;&#x6587;&#x7AE0;&#x540C;&#x540D;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x5373;&#x53EF;&#xFF0C;&#x7136;&#x540E;&#x6587;&#x7AE0;&#x7684;&#x5F15;&#x7528;&#x8DEF;&#x5F84;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x7684;<code>&#x6587;&#x7AE0;&#x540D;&#xFF08;&#x5C31;&#x662F;&#x56FE;&#x7247;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x540D;&#xFF09;/&#x56FE;&#x7247;&#x540D;</code>&#x3002;&#x7B80;&#x5316;&#x4E86;&#x5F88;&#x591A;&#xFF08;<em>&#x4E0D;&#x8FC7;Mou&#x4EC0;&#x4E48;&#x7684;&#x4E0D;&#x80FD;&#x9884;&#x89C8;</em>&#xFF09;</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x4E03;&#x725B;&#x505A;&#x4E3A;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x4ECD;&#x7136;&#x4E0D;&#x60F3;&#x653E;&#x5F03;&#x4E4B;&#x524D;&#x90A3;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x5F15;&#x7528;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x8FD8;&#x662F;&#x8981;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x8981;&#x5BF9;&#x63D2;&#x4EF6;&#x7684;&#x4EE3;&#x7801;&#x505A;&#x4E9B;&#x4FEE;&#x6539;&#x3002;</p>
+<h5 id="hexo-qiniu-sync"><a href="#hexo-qiniu-sync" class="headerlink" title="hexo-qiniu-sync"></a>hexo-qiniu-sync</h5><p><a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">hexo-qiniu-sync</a>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x540C;&#x6B65;&#x56FE;&#x7247;&#x5230;&#x4E03;&#x725B;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x7528;&#x8D77;&#x6765;&#x4E5F;&#x4E0D;&#x9519;&#x3002;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x53C2;&#x89C1;&#x5B98;&#x65B9;&#x7684;<a href="https://github.com/gyk001/hexo-qiniu-sync/blob/master/README.md" target="_blank" rel="external">README</a></p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8BF4;&#x4E0B;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">plugins:</div><div class="line">  - hexo-qiniu-sync</div><div class="line"></div><div class="line"> #&#x4E03;&#x725B;&#x4E91;&#x5B58;&#x50A8;&#x8BBE;&#x7F6E;</div><div class="line"> ##offline       &#x662F;&#x5426;&#x79BB;&#x7EBF;. &#x79BB;&#x7EBF;&#x72B6;&#x6001;&#x5C06;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5730;&#x5740;&#x6E32;&#x67D3;</div><div class="line"> ##sync          &#x662F;&#x5426;&#x540C;&#x6B65;</div><div class="line"> ##bucket        &#x7A7A;&#x95F4;&#x540D;&#x79F0;.</div><div class="line"> ##access_key    &#x4E0A;&#x4F20;&#x5BC6;&#x94A5;AccessKey</div><div class="line"> ##secret_key    &#x4E0A;&#x4F20;&#x5BC6;&#x94A5;SecretKey</div><div class="line"> ##secret_file   &#x79D8;&#x94A5;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x914D;&#x7F6E;&#x5230;&#x6587;&#x4EF6;&#x5185;&#xFF0C;&#x9632;&#x6B62;&#x6CC4;&#x9732;&#xFF0C;json&#x683C;&#x5F0F;&#x3002;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x5747;&#x53EF;</div><div class="line"> ##dirPrefix     &#x4E0A;&#x4F20;&#x7684;&#x8D44;&#x6E90;&#x5B50;&#x76EE;&#x5F55;&#x524D;&#x7F00;.&#x5982;&#x8BBE;&#x7F6E;&#xFF0C;&#x9700;&#x4E0E;urlPrefix&#x540C;&#x6B65; </div><div class="line"> ##urlPrefix     &#x5916;&#x94FE;&#x524D;&#x7F00;.</div><div class="line"> ##up_host      &#x4E0A;&#x4F20;&#x670D;&#x52A1;&#x5668;&#x8DEF;&#x5F84;,&#x5982;&#x9009;&#x62E9;&#x534E;&#x5317;&#x533A;&#x57DF;&#x7684;&#x8BDD;&#x914D;&#x7F6E;&#x4E3A;http://up-z1.qiniu.com</div><div class="line"> ##local_dir     &#x672C;&#x5730;&#x76EE;&#x5F55;.</div><div class="line"> ##update_exist  &#x662F;&#x5426;&#x66F4;&#x65B0;&#x5DF2;&#x7ECF;&#x4E0A;&#x4F20;&#x8FC7;&#x7684;&#x6587;&#x4EF6;(&#x4EC5;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4E0D;&#x540C;&#x6216;&#x5728;&#x4E0A;&#x6B21;&#x4E0A;&#x4F20;&#x540E;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x7684;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x4E0A;&#x4F20;)</div><div class="line"> ##image/js/css  &#x5B50;&#x53C2;&#x6570;folder&#x4E3A;&#x4E0D;&#x540C;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x79CD;&#x7C7B;&#x7684;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x52A8;</div><div class="line"> ##image.extend  &#x8FD9;&#x662F;&#x4E2A;&#x7279;&#x6B8A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x7F29;&#x7565;&#x56FE;&#x6216;&#x52A0;&#x6C34;&#x5370;&#x7B49;&#x64CD;&#x4F5C;&#x3002;&#x5177;&#x4F53;&#x8BF7;&#x53C2;&#x8003;http://developer.qiniu.com/docs/v6/api/reference/fop/image/ </div><div class="line"> ##              &#x53EF;&#x4F7F;&#x7528;&#x57FA;&#x672C;&#x56FE;&#x7247;&#x5904;&#x7406;&#x3001;&#x9AD8;&#x7EA7;&#x56FE;&#x7247;&#x5904;&#x7406;&#x3001;&#x56FE;&#x7247;&#x6C34;&#x5370;&#x5904;&#x7406;&#x8FD9;3&#x4E2A;&#x63A5;&#x53E3;&#x3002;&#x4F8B;&#x5982; ?imageView2/2/w/500 &#x5373;&#x751F;&#x6210;&#x5BBD;&#x5EA6;&#x6700;&#x591A;500px&#x7684;&#x7F29;&#x7565;&#x56FE;</div><div class="line">qiniu:</div><div class="line">  offline: false</div><div class="line">  sync: true</div><div class="line">  bucket: bucket_name</div><div class="line">  secret_file: sec/qn.json or C:</div><div class="line">  access_key: AccessKey</div><div class="line">  secret_key: SecretKey</div><div class="line">  dirPrefix: hexoblog</div><div class="line">  urlPrefix: http://blogsrc.error408.com/hexoblog</div><div class="line">  up_host: http://upload.qiniu.com</div><div class="line">  local_dir: yourlocal_dirname</div><div class="line">  update_exist: true</div><div class="line">  image: </div><div class="line">    folder: images</div><div class="line">    extend: </div><div class="line">  js:</div><div class="line">    folder: js</div><div class="line">  css:</div><div class="line">    folder: css</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><code>bucket</code>&#x6307;&#x7684;&#x662F;&#x4E03;&#x725B;&#x8D26;&#x6237;&#x521B;&#x5EFA;&#x7684;&#x4E03;&#x725B;&#x5B58;&#x50A8;&#x63A7;&#x4EF6;&#x7684;&#x540D;&#x79F0;</li>
+<li><code>access_key</code> &#x4E0E; <code>secret_key</code>&#x662F;&#x4E03;&#x725B;&#x8D26;&#x6237;&#x7684;&#x79D8;&#x94A5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x79D8;&#x94A5;&#x7BA1;&#x7406;&#x4E2D;&#x67E5;&#x770B;&#xFF08;&#x53EA;&#x6709;&#x9A8C;&#x8BC1;&#x79D8;&#x94A5;&#x624D;&#x80FD;&#x6307;&#x5B9A;&#x8D26;&#x6237;&#x5B58;&#x50A8;&#x561B;&#xFF09;</li>
+<li><code>secret_file</code>&#x53EF;&#x6709;&#x53EF;&#x65E0;&#xFF0C;&#x8C8C;&#x4F3C;&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x4E4B;&#x540E;&#x4E0A;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x3002;&#x6211;&#x7684;&#x5728;&#x52A0;&#x4E86;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x4E4B;&#x540E;&#x53CD;&#x800C;&#x62A5;&#x9519;&#xFF0C;&#x7D22;&#x6027;&#x53BB;&#x9664;&#x4E86;&#x3002;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x662F;&#x9700;&#x8981;&#x4F60;&#x81EA;&#x5DF1;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;json&#x7684;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x4E0A;&#x9762;&#x7684;&#x79D8;&#x94A5;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x5199;&#x5728;&#x8FD9;&#x91CC;&#x5C31;&#x597D;</li>
+<li><code>dirPrefix</code>&#x8FD9;&#x4E2A;&#x662F;&#x4E03;&#x725B;&#x7684;&#x76EE;&#x5F55;&#x540D;&#xFF0C;&#x4E03;&#x725B;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x6CA1;&#x6709;&#x663E;&#x793A;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x6240;&#x8C13;&#x76EE;&#x5F55;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x6307;&#x5B9A;&#x8BBF;&#x95EE;&#x57DF;&#x540D;&#x540E;&#x9762;&#x5148;&#x52A0;&#x4E0A;&#x4F60;&#x7684;&#x76EE;&#x5F55;&#x540D;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x4F60;&#x4E0A;&#x4F20;&#x7684;&#x56FE;&#x7247;&#x540D;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x76EE;&#x5F55;&#x4E86;&#xFF0C;&#x6765;&#x533A;&#x5206;&#x56FE;&#x7247;&#x7684;&#x5206;&#x7C7B;</li>
+<li><code>up_host</code>&#x8FD9;&#x4E2A;&#x662F;&#x8BBF;&#x95EE;&#x56FE;&#x7247;&#x7684;&#x57DF;&#x540D;&#x5730;&#x5740;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x7684;&#x662F;<code>http://error408.com</code>&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x5DF2;&#x7ECF;&#x7ED1;&#x5B9A;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF08;&#x7ED1;&#x5B9A;&#x4E4B;&#x524D;&#x53EF;&#x4EE5;&#x7528;&#x6D4B;&#x8BD5;&#x57DF;&#x540D;&#xFF09;&#x3002;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5728;&#x4E03;&#x725B;&#x7684;&#x5185;&#x5BB9;&#x7BA1;&#x7406;&#x4E0A;&#x81EA;&#x5DF1;&#x4E0A;&#x4F20;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x7136;&#x540E;&#x67E5;&#x770B;&#x5916;&#x94FE;&#xFF0C;&#x5C31;&#x4F1A;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#x4E86;</li>
+<li><code>local_dir</code>&#x8FD9;&#x4E2A;&#x662F;&#x672C;&#x5730;&#x7684;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C31;&#x662F;&#x63D2;&#x4EF6;&#x5E2E;&#x4F60;&#x540C;&#x6B65;&#x56FE;&#x7247;&#x5230;&#x4E03;&#x725B;&#x7684;&#x6240;&#x5728;&#x5730;&#x3002;&#x4F60;&#x6240;&#x6709;&#x7684;&#x56FE;&#x7247;&#x7B49;&#x8D44;&#x6E90;&#x90FD;&#x653E;&#x5728;&#x8FD9;&#x91CC;&#x3002;<strong>&#x540D;&#x5B57;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;</strong></li>
+<li><code>image</code>&#x3001;<code>js</code>&#x3001;<code>css</code> &#x8FD9;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x8FD9;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4F1A;&#x5728;hexo&#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x63D2;&#x4EF6;&#x81EA;&#x52A8;&#x4F1A;&#x5728;&#x4E0A;&#x4E00;&#x6B65;&#x4F60;&#x6307;&#x5B9A;&#x7684;&#x90A3;&#x4E2A;<code>local_dir</code>&#x4E0B;&#x521B;&#x5EFA;&#x8FD9;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x540D;&#x5B57;&#x5206;&#x522B;&#x662F;<code>folder</code>&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x5206;&#x522B;&#x53EF;&#x4EE5;&#x653E;&#x76F8;&#x5E94;&#x7684;&#x8D44;&#x6E90;</li>
+</ul>
+</blockquote>
+<p>&#x8FD9;&#x6837;&#x4F60;&#x5728;<code>local_dir</code>&#x7684;<code>image</code>&#x547D;&#x540D;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x4E4B;&#x540E;&#x8FD0;&#x884C;hexo&#xFF08;&#x5982;<code>hexo s</code>&#xFF09;&#xFF0C;&#x56FE;&#x7247;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;&#x4E03;&#x725B;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x7684;&#x5185;&#x5BB9;&#x7BA1;&#x7406;&#x4E2D;&#x770B;&#x89C1;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x4F60;&#x4F1A;&#x770B;&#x5230;&#x56FE;&#x7247;&#x7684;&#x5916;&#x94FE;URL&#x5C31;&#x662F;<code>http://your_site/your_static(&#x4F60;&#x7684;&#x76EE;&#x5F55;-dirPrefix&#x53C2;&#x6570;&#x7684;&#x914D;&#x7F6E;)/images/yourimage.png</code>&#x3002;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x57DF;&#x540D;+&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x76EE;&#x5F55;&#x540D;+images&#xFF08;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;<code>image</code>&#x4E2D;<code>folder</code>&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#xFF09;+ &#x4F60;&#x7684;&#x56FE;&#x7247;&#x540D;</p>
+</blockquote>
+<p>&#x8FD9;&#x6837;&#x540C;&#x6B65;&#x4E03;&#x725B;&#x7528;&#x641E;&#x5B9A;&#x4E86;&#xFF0C;&#x6700;&#x540E;&#x5C31;&#x5269;&#x4E0B;&#x6587;&#x7AE0;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x5F15;&#x7528;&#x4E86;</p>
+<h5 id="&#x7B80;&#x5316;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x5F15;&#x7528;"><a href="#&#x7B80;&#x5316;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x5F15;&#x7528;" class="headerlink" title="&#x7B80;&#x5316;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x5F15;&#x7528;"></a>&#x7B80;&#x5316;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x5F15;&#x7528;</h5><p>&#x8FD9;&#x91CC;&#x8981;&#x914D;&#x5408;&#x7B2C;&#x4E00;&#x6B65;&#x4E2D;&#x7684;&#x63D2;&#x4EF6;<code>hexo-asset-image</code>&#x4F7F;&#x7528;&#xFF0C;&#x9996;&#x5148;&#x5728;&#x535A;&#x5BA2;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x8FDB;&#x5165;<code>node_modules</code>&#x63D2;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF0C;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;&#x8FDB;&#x5165;<code>index.js</code>&#x6587;&#x4EF6;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x8F91;&#x4E86;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Hexo&#x4E03;&#x725B;&#x56FE;&#x5E8A;&#x4F7F;&#x7528;_index_js.png" alt="&#x914D;&#x7F6E;&#x4EE3;&#x7801;"></p>
+<p>&#x4E0A;&#x9762;&#x4FBF;&#x662F;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#xFF0C;&#x5176;&#x4E2D;<code>link</code>&#x5C31;&#x662F;&#x83B7;&#x53D6;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x76EE;&#x5F55;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x800C;&#x6700;&#x540E;&#x7684;<code>src</code>&#x6307;&#x5B9A;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x62FC;&#x63A5;&#x6587;&#x7AE0;&#x6240;&#x5728;&#x76EE;&#x5F55;&#x4E0E;&#x6587;&#x7AE0;&#x4E2D;&#x56FE;&#x7247;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x56FE;&#x7247;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#x3002;&#x7531;&#x4E8E;&#xFF0C;&#x4E0D;&#x61C2;JS&#xFF0C;&#x5C31;&#x53EA;&#x80FD;&#x5728;&#x903B;&#x8F91;&#x4E0A;&#x5224;&#x65AD;&#x4ED6;&#x7684;&#x903B;&#x8F91;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x840C;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x60F3;&#x6CD5;&#xFF0C;&#x6211;&#x662F;&#x4E0D;&#x662F;&#x53EF;&#x4EE5;&#x628A;<code>link</code>&#x6362;&#x6210;&#x6211;&#x7684;&#x4E03;&#x725B;&#x56FA;&#x5B9A;&#x5730;&#x5740;&#xFF0C;&#x7136;&#x540E;&#x6700;&#x540E;&#x62FC;&#x63A5;&#x4E0A;&#x6587;&#x7AE0;&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x540D;&#xFF1F;&#x90A3;&#x4E48;&#x6211;&#x4E0D;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x7AE0;&#x4E2D;&#x53EA;&#x662F;&#x5F15;&#x7528;&#x56FE;&#x7247;&#x540D;&#x5C31;&#x884C;&#x4E86;&#x5417;&#xFF1F;&#x597D;&#x4E86;&#xFF0C;&#x5C1D;&#x8BD5;&#x4E4B;&#x540E;&#xFF0C;&#x679C;&#x7136;&#x594F;&#x6548;&#x3002;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var link = data.permalink;</div><div class="line">// link = link.substring(getPosition(link, &apos;/&apos;, 3) + 1);</div><div class="line">link = config.qiniu.urlPrefix + &apos;/&apos; + config.qiniu.image.folder;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">src = src.split(&quot;/&quot;).pop();</div><div class="line">// $(this).attr(&apos;src&apos;, &apos;/&apos; + link + src);</div><div class="line">$(this).attr(&apos;src&apos;, link + &apos;/&apos; + src);</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>&#x8FD9;&#x91CC;&#x6211;&#x4FEE;&#x6539;&#x4E86;<code>link</code>&#x5730;&#x5740;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x4E0B;&#x4E00;&#x4E2A;&#x6B7B;&#x7684;&#x5730;&#x5740;&#x6BD4;&#x5982;<code>link = &quot;http://&#x4E03;&#x725B;&#x8BBF;&#x95EE;&#x56FE;&#x7247;&#x56FA;&#x5B9A;&#x524D;&#x7F00;&quot;</code>&#xFF0C;&#x800C;&#x6211;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x914D;&#x7F6E;&#xFF0C;&#x91C7;&#x7528;&#x4E86;&#x76F4;&#x63A5;&#x83B7;&#x53D6;<code>config</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;<code>qiniu</code>&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x62FC;&#x63A5;&#x6210;&#x56FA;&#x5B9A;&#x7684;&#x56FE;&#x7247;&#x8BBF;&#x95EE;&#x524D;&#x7F00;&#x3002;&#x8FD9;&#x4E2A;&#x8BBF;&#x95EE;&#x524D;&#x7F00;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x770B;&#x4E03;&#x725B;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E2D;&#x56FE;&#x7247;&#x7684;&#x5916;&#x94FE;&#xFF0C;&#x6765;&#x786E;&#x5B9A;&#x5171;&#x540C;&#x7684;&#x8BBF;&#x95EE;&#x524D;&#x7F00;</li>
+<li>&#x7B2C;&#x4E8C;&#x6B65;&#x4E2D;&#x7684;&#x5BF9;&#x4E8E;<code>src</code>&#x7684;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x4E5F;&#x8981;&#x5904;&#x7406;&#x4E0B;&#xFF0C;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#x7528;&#x6211;&#x5199;&#x7684;&#x4E03;&#x725B;&#x56FA;&#x5B9A;&#x8DEF;&#x5F84;<code>link</code> + <code>/</code> + &#x6587;&#x7AE0;&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x5F15;&#x7528;&#x8DEF;&#x5F84;<code>src</code>&#x3002;&#x8FD9;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>config</code>&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x4E0A;&#x9762;&#x6CE8;&#x91CA;&#x7684;<code>baseUrl</code>&#xFF0C;&#x628A;&#x56FA;&#x5B9A;&#x8DEF;&#x5F84;&#x524D;&#x7F00;&#x5199;&#x597D;&#xFF0C;<code>link</code>&#x7684;&#x4FEE;&#x6539;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x662F;<code>link = config.qiniu.baseUrl</code>&#x4E86;</li>
+</ul>
+</blockquote>
+<p><br><br><br>&#x8FD9;&#x6837;&#xFF0C;&#x6700;&#x540E;&#x7EC8;&#x4E8E;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x4F7F;&#x7528;&#x4E03;&#x725B;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x56FE;&#x7247;&#x90FD;&#x53EF;&#x4EE5;&#x653E;&#x5728;<code>local_dir</code>&#x7684;<code>images</code>&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6587;&#x7AE0;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x76F4;&#x63A5;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x56FE;&#x7247;&#x540D;&#x5373;&#x53EF;&#xFF0C;&#x5982;<code>![&#x56FE;&#x7247;](&#x5F15;&#x7528;&#x5730;&#x5740;&#x5C31;&#x662F;&#x56FE;&#x7247;&#x540D;.png)</code>&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x533A;&#x5206;&#x6587;&#x7AE0;&#xFF0C;&#x800C;&#x6240;&#x6709;&#x7684;&#x56FE;&#x7247;&#x90FD;&#x662F;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C;&#x6240;&#x4EE5;&#x81EA;&#x5DF1;&#x56FE;&#x7247;&#x7684;&#x547D;&#x540D;&#x6700;&#x597D;&#x662F;<code>&#x6587;&#x7AE0;&#x540D;+&#x56FE;&#x7247;&#x540D;</code>&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x6837;&#x6709;&#x5229;&#x4E8E;&#x540E;&#x671F;&#x7684;&#x533A;&#x5206;&#x67E5;&#x770B;&#x3002;</p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/08/02/Hexo七牛图床使用/"
+                    data-title="Hexo七牛图床使用"
+                    data-url="http://error408.com/Roylee-ML.github.io/2016/08/02/Hexo七牛图床使用/"
+                    data-images="http://error408.com/Roylee-ML.github.io/2016/08/02/Hexo七牛图床使用/img/info-bg.jpg"
+                    data-content="&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x4F7F;&#x7528... | Roylee Blog From A iOS Developer " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/Roylee-ML.github.io/2016/07/20/学习Swift的正确姿势/" data-toggle="tooltip" data-placement="top" title="学习Swift的正确姿势">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/08/02/Hexo七牛图床使用/"
+                        data-title="Hexo七牛图床使用"
+                        data-url="http://error408.com/Roylee-ML.github.io/2016/08/02/Hexo七牛图床使用/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/Roylee-ML.github.io/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#Hexo" title="Hexo">Hexo</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'error408';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/error408">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/roylee.stillway">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Roylee-ML">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Roylee&#39;s Blog 2016 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> <!-- | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe> -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/Roylee-ML.github.io/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/Roylee-ML.github.io/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/Roylee-ML.github.io/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://error408.com/Roylee-ML.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '63fd5f0468edd7f1983edc897f814664';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
