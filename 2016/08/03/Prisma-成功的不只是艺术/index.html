@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A blog of roylee，一个半路出家的iOS Coder的技术之路">
+    <meta name="keyword"  content="Personal blog，iOS，Developer，Coder，博客，iOS开发，技术">
+    <link rel="shortcut icon" href="/Roylee-ML.github.io/img/favicon.ico">
+
+    <title>
+        
+          Prisma--成功的不只是艺术 - Roylee Blog From A iOS Developer
+        
+    </title>
+
+    <link rel="canonical" href="http://error408.com/Roylee-ML.github.io/2016/08/03/Prisma-成功的不只是艺术/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <meta name="baidu-site-verification" content="zeyFn1s9OY" />
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Roylee-ML.github.io/">Roylee&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/Roylee-ML.github.io/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/Roylee-ML.github.io/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/Roylee-ML.github.io/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://blogsrc.error408.com/hexoblog/images/base/info-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#Prisma,自定义相机" title="Prisma,自定义相机">Prisma,自定义相机</a>
+                        
+                    </div>
+                    <h1>Prisma--成功的不只是艺术</h1>
+                    <h2 class="subheading">高仿Prisma自定义相机拍照、相册图片选取、图片编辑功能</h2>
+                    <span class="meta">
+                        Posted by Roylee on
+                        2016-08-03
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h4 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h4><p>&#x524D;&#x4E00;&#x9635;&#x5B50;&#xFF0C;&#x90FD;&#x8BF4;&#x4E1C;&#x534A;&#x7403;&#x7684;&#x4EBA;&#x90FD;&#x5728;&#x5FD9;&#x7740;&#x6293;&#x5996;&#x602A;&#xFF0C;&#x897F;&#x534A;&#x7403;&#x7684;&#x4EBA;&#x90FD;&#x5728;&#x5FD9;&#x7740;&#x641E;&#x827A;&#x672F;&#x7167;&#x3002;&#x5BF9;&#xFF0C;&#x8FD9;&#x540E;&#x8005;&#x5C31;&#x662F;&#x5F88;&#x662F;&#x6D41;&#x884C;&#x7684;Prisma&#x3002;Prisma&#x7684;&#x6D41;&#x884C;&#xFF0C;&#x8BF4;&#x660E;&#x5927;&#x5BB6;&#x5FC3;&#x4E2D;&#x8FD8;&#x662F;&#x4FDD;&#x7559;&#x7740;&#x5BF9;&#x827A;&#x672F;&#x7684;&#x8FFD;&#x6C42;&#x3002;</p>
+<p>&#x800C;&#x6211;&#xFF0C;&#x4E5F;&#x6309;&#x8010;&#x4E0D;&#x4F4F;&#xFF0C;&#x8D76;&#x7D27;&#x5C1D;&#x8BD5;&#x4E86;&#x4E00;&#x756A;&#x3002;&#x7531;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x70B9;&#x8B66;&#x6212;&#x5FC3;&#x91CC;&#xFF0C;&#x6240;&#x4EE5;&#x731C;&#x6D4B;Prisma&#x4F1A;&#x4E0D;&#x4F1A;&#x628A;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x5462;&#xFF1F;&#x4E8E;&#x662F;&#xFF0C;&#x5C31;&#x505A;&#x4E86;&#x4E00;&#x6B21;&#x65AD;&#x7F51;&#x6D4B;&#x8BD5;&#x3002;&#x679C;&#x771F;&#xFF0C;&#x62A5;&#x4E86;&#x65AD;&#x7F51;&#x9519;&#x8BEF;&#x800C;&#x4E14;&#x56FE;&#x7247;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x4E0A;&#x4F20;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x53EF;&#x4EE5;&#x80AF;&#x5B9A;&#x7684;&#x662F;&#xFF1A;<strong>Prisma&#x7684;&#x56FE;&#x7247;&#x5904;&#x7406;&#x662F;&#x653E;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x7684;</strong>&#x3002;&#x4E0D;&#x51FA;&#x6240;&#x6599;&#xFF0C;&#x4E4B;&#x540E;&#x7ECF;&#x5E38;&#x4F1A;&#x51FA;&#x73B0;&#x670D;&#x52A1;&#x5668;&#x8FC7;&#x8F7D;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4F46;&#x662F;&#x770B;&#x7740;Prisma&#x5904;&#x7406;&#x597D;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x771F;&#x662F;&#x4F69;&#x670D;&#x4E0D;&#x5DF2;&#xFF08;<em>&#x5176;&#x5B9E;&#x5F88;&#x662F;&#x5E0C;&#x671B;&#x4ED6;&#x4EEC;&#x7684;&#x56FE;&#x7247;&#x5904;&#x7406;&#x662F;&#x653E;&#x5728;&#x524D;&#x7AEF;&#xFF0C;&#x4E5F;&#x597D;&#x9006;&#x5411;&#x4E00;&#x4E0B;&#xFF0C;&#x54C8;&#x54C8;</em>&#xFF09;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;Prisma&#x7684;&#x56FE;&#x7247;&#x827A;&#x672F;&#x5904;&#x7406;&#xFF0C;&#x53EA;&#x80FD;&#x662F;&#x53F9;&#x4E3A;&#x89C2;&#x6B62;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4ECD;&#x7136;&#x6309;&#x8010;&#x4E0D;&#x4F4F;&#x60F3;&#x8981;&#x91CD;&#x5199;&#x4E00;&#x4E0B;Prisma&#x7684;&#x51B2;&#x52A8;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x91CD;&#x5199;&#x4E86;Prisma&#x6240;&#x6709;&#x7684;&#x754C;&#x9762;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5728;&#x91CD;&#x5199;&#x7684;&#x4E2D;&#x53D1;&#x73B0;&#xFF0C;Prisma&#x7684;&#x4F18;&#x79C0;&#x5E76;&#x4E0D;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x5BF9;&#x4E8E;&#x56FE;&#x7247;&#x7684;&#x827A;&#x672F;&#x5904;&#x7406;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x81EA;&#x7136;&#x800C;&#x7136;&#x5C31;&#x4F1A;&#x5173;&#x6CE8;&#x5B83;&#x7684;&#x6BCF;&#x4E2A;&#x7EC6;&#x8282; &#x2014;&#x2014;&#x771F;&#x662F;&#x7EC6;&#x601D;&#x6781;&#x6050;&#x554A;&#xFF0C;Prisma&#x5728;&#x7EC6;&#x8282;&#x7684;&#x5904;&#x7406;&#x4E0A;&#x5341;&#x5206;&#x7684;&#x8BA4;&#x771F;&#x3002;&#x754C;&#x9762;&#x7B80;&#x6D01;&#x6613;&#x7528;&#xFF0C;&#x56FE;&#x7247;&#x7684;&#x64CD;&#x4F5C;&#x7EC6;&#x8282;&#x5230;&#x4F4D;&#x3002;&#x4E5F;&#x56E0;&#x6B64;&#xFF0C;&#x9047;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x5751;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x6574;&#x7406;&#x4E00;&#x4E0B;&#x91CD;&#x5199;&#x8FC7;&#x7A0B;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x95EE;&#x9898;&#x4E0E;&#x5751;&#x3002;</p>
+<blockquote>
+<p>Prisma&#x7684;&#x6784;&#x5EFA;&#x662F;&#x91C7;&#x7528;StoryBoard&#x4E0E;xib&#xFF0C;&#x8BED;&#x8A00;&#x662F;Swift&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x91CD;&#x5199;&#x7684;&#x9879;&#x76EE;&#x4E5F;&#x662F;&#x91C7;&#x7528;Swift&#x7ED3;&#x5408;StroyBoard&#x3001;xib</p>
+</blockquote>
+<p><br></p>
+<h4 id="&#x9879;&#x76EE;&#x67B6;&#x6784;"><a href="#&#x9879;&#x76EE;&#x67B6;&#x6784;" class="headerlink" title="&#x9879;&#x76EE;&#x67B6;&#x6784;"></a>&#x9879;&#x76EE;&#x67B6;&#x6784;</h4><p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/prismanib.png" alt="StoryBoard"></p>
+<p>&#x901A;&#x8FC7;&#x5206;&#x6790;Prisma&#x7684;&#x754C;&#x9762;&#x6784;&#x9020;&#xFF0C;&#x4EE5;&#x53CA;Playload&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x4E2A;&#x4EBA;&#x8BA4;&#x4E3A;&#xFF0C;Prisma&#x7684;&#x5E03;&#x5C40;&#x662F;&#x91C7;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>RootViewController&#x4F5C;&#x4E3A;&#x8DDF;&#x89C6;&#x56FE;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x76F8;&#x673A;&#x7A97;&#x53E3;&#x4EE5;&#x53CA;&#x56FE;&#x7247;&#x7F16;&#x8F91;&#x56FE;&#x7247;&#x827A;&#x672F;&#x5408;&#x6210;&#x7A97;&#x53E3;&#x90FD;&#x653E;&#x5728;&#x5C4F;&#x5E55;&#x7684;&#x4E0A;&#x65B9;&#xFF0C;&#x91C7;&#x7528;1 &#xFF1A;1&#x7684;&#x6BD4;&#x4F8B;&#x8BBE;&#x7F6E;</li>
+<li>&#x7531;&#x4E8E;Prisma&#x5E95;&#x90E8;&#x64CD;&#x4F5C;&#x754C;&#x9762;&#x770B;&#x4E0A;&#x53BB;&#x5341;&#x5206;&#x50CF;&#x4E00;&#x4E2A;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x4E8E;&#x662F;&#x5927;&#x80C6;&#x7684;&#x91C7;&#x7528;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x5668;&#x4F5C;&#x4E3A;&#x5E95;&#x90E8;&#x64CD;&#x4F5C;&#x754C;&#x9762;&#x3002;<em>&#x2014;&#x2014;&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x754C;&#x9762;&#x8DF3;&#x8F6C;&#x4E0A;&#x65B9;&#x4FBF;&#x4E0D;&#x5C11;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x5751;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x5177;&#x4F53;&#x7684;&#x5206;&#x6790;&#x3002;</em> </li>
+</ul>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x6765;&#x5404;&#x4E2A;&#x51FB;&#x7834;&#xFF0C;&#x89E3;&#x51B3;&#x6BCF;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p><br></p>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x673A;"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x673A;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x673A;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x673A;</h4><p>&#x5148;&#x8D34;&#x4E0A;Prisma&#x6240;&#x7528;&#x7684;Frameworks&#xFF1A;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/frameworks.png" alt="Frameworks"></p>
+<p>&#x4ECE;&#x4E0A;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;Prisma&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6846;&#x67B6;&#x6709;&#x54EA;&#x4E9B;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Prisma&#x91C7;&#x7528;&#x7684;&#x56FE;&#x50CF;&#x91C7;&#x96C6;&#x6846;&#x67B6;&#x662F;AVFoundation&#x3002;&#x800C;&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x673A;&#x4E5F;&#x6B63;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x6B64;&#x6846;&#x67B6;&#x4E2D;&#x7684;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li><strong>AVCaptureSession</strong>  &#x76F8;&#x673A;&#x7684;&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;&#x8D1F;&#x8D23;&#x89C6;&#x9891;&#x56FE;&#x7247;&#x7684;&#x7BA1;&#x7406;&#x529F;&#x80FD;</li>
+<li><strong>AVCaptureDeviceInput</strong>  &#x56FE;&#x50CF;&#x91C7;&#x96C6;&#x8F93;&#x5165;&#x8BBE;&#x5907;</li>
+<li><strong>AVCaptureStillImageOutput</strong> &#x7167;&#x7247;&#x6D41;&#x8F93;&#x51FA;</li>
+<li><strong>AVCaptureVideoPreviewLayer</strong> &#x56FE;&#x50CF;&#x9884;&#x89C8;&#x56FE;&#x5C42;&#xFF0C;&#x7528;&#x4E8E;&#x5B9E;&#x65F6;&#x5448;&#x73B0;&#x6444;&#x50CF;&#x5934;&#x91C7;&#x96C6;&#x666F;&#x8C61;</li>
+</ul>
+</blockquote>
+<p><br></p>
+<h5 id="&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;"><a href="#&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;" class="headerlink" title="&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;"></a>&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;</h5><p>&#x73B0;&#x5728;&#xFF0C;&#x5728;&#x58F0;&#x660E;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#x4E4B;&#x540E;&#xFF0C;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#x76F8;&#x673A;&#x76F8;&#x5173;</p>
+<pre><code>func initAVCapture() {
+    // Device
+    let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+
+    try! device.lockForConfiguration()
+    if device.hasFlash {
+        device.flashMode = AVCaptureFlashMode.Off
+    }
+    if device.isFocusModeSupported(.AutoFocus) {
+        device.focusMode = .AutoFocus
+    }
+    if device.isWhiteBalanceModeSupported(.AutoWhiteBalance) {
+        device.whiteBalanceMode = .AutoWhiteBalance
+    }
+    if device.exposurePointOfInterestSupported {
+        device.exposureMode = .ContinuousAutoExposure
+    }
+    device.unlockForConfiguration()
+
+    // Input &amp; Output
+    // When init AVCaptureDeviceInput first, system will show alert to confirm the authentication from user.
+    // But the best way is send the acces request manual. see `requestAccessForMediaType`
+    deviceIntput = try! AVCaptureDeviceInput(device: device)
+    stillImageOutPut = AVCaptureStillImageOutput()
+
+    // Output settings
+    stillImageOutPut?.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG, AVVideoScalingModeKey:AVVideoScalingModeResize]
+
+    if session.canAddInput(deviceIntput) {
+        session.addInput(deviceIntput)
+    }
+    if session.canAddOutput(stillImageOutPut) {
+        session.addOutput(stillImageOutPut)
+    }
+
+    session.sessionPreset = AVCaptureSessionPresetPhoto
+    // Preview
+    previewLayer = AVCaptureVideoPreviewLayer.init(session: session)
+    previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+
+    // Set root vc avcapture preview layer
+    photoPisplayBoard?.setAVCapturePreviewLayer(previewLayer!)
+}
+</code></pre><p><strong>&#x8FD9;&#x91CC;&#x9762;&#x6709;&#x51E0;&#x4E2A;&#x5751;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<blockquote>
+<ul>
+<li>&#x5728;&#x914D;&#x7F6E;<code>AVCaptureDevice</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x9501;&#x5B9A;&#x8BBE;&#x5907;&#xFF0C;&#x9632;&#x6B62;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x8BBF;&#x95EE;&#x8BBE;&#x5907;</li>
+<li><code>AVCaptureDevice</code>&#x7684;<code>focusMode</code>&#x5C5E;&#x6027;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x662F;<code>Locked</code>&#x3001;<code>AutoFocus</code>&#x4E0E;<code>ContinuousAutoFocus</code>&#x3002;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x9501;&#x5B9A;&#xFF08;&#x5C31;&#x662F;&#x53EA;&#x662F;&#x5BF9;&#x7126;&#x4E00;&#x4E2A;&#x6B7B;&#x7684;&#x70B9;&#xFF09;&#xFF0C;&#x81EA;&#x52A8;&#xFF0C;&#x6301;&#x7EED;&#x81EA;&#x52A8;&#x3002;<strong>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x81EA;&#x52A8;&#x6A21;&#x5F0F;&#x53EA;&#x662F;&#x5728;&#x5207;&#x6362;&#x8BBE;&#x5907;&#x7684;&#x65F6;&#x5019;&#x81EA;&#x52A8;&#x5BF9;&#x7126;&#x4E00;&#x6B21;&#xFF1B;&#x6301;&#x7EED;&#x5BF9;&#x7126;&#x624D;&#x4F1A;&#x5728;&#x8BBE;&#x5907;&#x79FB;&#x52A8;&#x540E;&#x6839;&#x636E;&#x76F8;&#x4F4D;&#x68C0;&#x6D4B;&#x6301;&#x7EED;&#x5BF9;&#x7126;</strong></li>
+<li><code>AVCaptureStillImageOutput</code>&#x9700;&#x8981;&#x914D;&#x7F6E;&#x53C2;&#x6570;<code>outputSettings</code>&#xFF0C;&#x8BBE;&#x7F6E;&#x8F93;&#x51FA;&#x914D;&#x7F6E;&#x4E3A;JPEG</li>
+<li>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5C31;&#x662F;<code>AVCaptureVideoPreviewLayer</code>&#x9884;&#x89C8;&#x56FE;&#x5C42;&#x4E86;&#xFF0C;&#x9884;&#x89C8;&#x56FE;&#x5C42;&#x662F;&#x6709;&#x81EA;&#x5DF1;&#x7684;frame&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x8BBE;&#x5B9A;&#x7684;layer&#x7684;frame&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x586B;&#x5145;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x91C7;&#x7528;<code>AVLayerVideoGravityResizeAspectFill</code>&#xFF0C;&#x5C31;&#x662F;&#x5DE6;&#x53F3;&#x586B;&#x5145;&#x5BF9;&#x9F50;&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#x4E0A;&#x4E0B;&#x591A;&#x51FA;&#x6765;&#x7684;&#x88AB;cliptobounds&#x4E86;&#xFF09;</li>
+</ul>
+</blockquote>
+<p>&#x6700;&#x540E;&#xFF0C;&#x53EA;&#x8981;&#x5F00;&#x542F;&#x76F8;&#x673A;&#x5C31;&#x884C;&#x4E86;</p>
+<pre><code>override func viewWillAppear(animated: Bool) {
+    session.startRunning()
+}
+</code></pre><p><strong>&#x8FD9;&#x91CC;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#x7684;&#x95EE;&#x9898;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x5F53;&#x7136;&#x5728;&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x6B21;&#xFF0C;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x54E6;&#xFF0C;&#x521D;&#x59CB;&#x5316;<code>AVCaptureDeviceInput</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5F39;&#x51FA;&#x4E00;&#x6B21;&#x6743;&#x9650;&#x8BB8;&#x53EF;&#x7684;alert&#xFF0C;&#x56E0;&#x6B64;&#x7B2C;&#x4E00;&#x6B21;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x505A;&#x8BA4;&#x8BC1;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x6743;&#x9650;&#x5F39;&#x6846;&#x53EA;&#x6709;&#x4E00;&#x6B21;&#xFF0C;&#x5047;&#x5982;&#x7528;&#x6237;&#x62D2;&#x7EDD;&#x4E86;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x8FDB;&#x5165;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x521D;&#x59CB;&#x5316;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x5D29;&#x6E83;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD8;&#x662F;&#x4E3B;&#x52A8;&#x505A;&#x4E00;&#x6B21;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#x5224;&#x65AD;</p>
+</blockquote>
+<pre><code>/// Capture authorization
+class func captureAuthorization(shouldCapture: ((Bool)-&gt; Void)!) {
+
+    let captureStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+    switch captureStatus {
+    case.NotDetermined:
+        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { (granted:  Bool) -&gt; Void in
+            shouldCapture(granted)
+        })
+        break
+    case.Authorized:
+        shouldCapture(true)
+        break
+    default:
+        shouldCapture(false)
+        break
+    }
+}
+</code></pre><h5 id="&#x6444;&#x50CF;&#x5934;&#x5207;&#x6362;"><a href="#&#x6444;&#x50CF;&#x5934;&#x5207;&#x6362;" class="headerlink" title="&#x6444;&#x50CF;&#x5934;&#x5207;&#x6362;"></a>&#x6444;&#x50CF;&#x5934;&#x5207;&#x6362;</h5><pre><code>@IBAction func changeFlash(sender: AnyObject) {
+    var image: UIImage? = nil
+
+    let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+    try! device.lockForConfiguration()
+    if device.hasFlash {
+        switch device.flashMode {
+        case .Off:
+            device.flashMode = .On
+            currentFlashMode = .On
+            image = UIImage.init(named: &quot;flash-on&quot;)
+            break
+        case .On:
+            device.flashMode = .Auto
+            currentFlashMode = .Auto
+            image = UIImage.init(named: &quot;flash-auto&quot;)
+            break
+        case .Auto:
+            device.flashMode = .Off
+            currentFlashMode = .Off
+            image = UIImage.init(named: &quot;flash&quot;)
+            break
+        }
+        // Flash baritem
+        let letButton = navigationBar.topItem!.leftBarButtonItem?.customView as? UIButton
+        letButton?.setImage(image, forState: UIControlState.Normal)
+    }
+    device.unlockForConfiguration()
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x540C;&#x6837;&#x8981;&#x9501;&#x5B9A;&#x8BBE;&#x5907;&#x518D;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x7EC6;&#x8282;&#x6765;&#x4E86;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>&#x6211;&#x672C;&#x4EE5;&#x4E3A;&#xFF0C;flash&#x4EC0;&#x4E48;&#x7684;&#x64CD;&#x4F5C;&#x6309;&#x94AE;&#x76F4;&#x63A5;&#x662F;<code>UIBarButtonItem</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x7531;&#x4E8E;&#x524D;&#x7F6E;&#x6444;&#x50CF;&#x5934;&#x4E0D;&#x652F;&#x6301;flash&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x524D;&#x7F6E;&#x8F6C;&#x53F0;&#x4E0B;Prisma&#x4F1A;&#x5C06;flash&#x6309;&#x94AE;&#x7F6E;&#x7070;&#x3002;&#x800C;<code>UIBarButtonItem</code>&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x540C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF08;&#x5BF9;&#xFF0C;&#x5C31;&#x662F;&#x540C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;Prisma&#x53EA;&#x662F;&#x7528;&#x4E86;&#x4E00;&#x5F20;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x56FE;&#x7247;&#xFF09;&#x6765;&#x8BBE;&#x7F6E;enabled&#x7684;&#x7F6E;&#x7070;&#x88C5;&#x586B;&#x3002;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x91C7;&#x7528;&#x4E00;&#x4E2A;button&#x4F5C;&#x4E3A;leftBarButtonItem&#x7684;customView&#xFF0C;&#x4FBF;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E86;</li>
+<li>&#x53E6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#xFF0C;<code>UIBarButtonItem</code>&#x4F1A;&#x5728;&#x6E32;&#x67D3;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6839;&#x636E;&#x672C;&#x8EAB;&#x7684;tintColor&#x5BF9;&#x56FE;&#x7247;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x539F;&#x56FE;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x7684;&#x56FE;&#x7247;&#x9700;&#x8981;&#x505A;&#x4E00;&#x6B21;render&#x5904;&#x7406; <code>image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)</code>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x5F0F;&#x662F;&#x5728;<code>Assets.xcassets</code>&#x4E2D;&#x5BF9;&#x56FE;&#x7247;&#x6E32;&#x67D3;&#x6A21;&#x5F0F;&#x8BBE;&#x7F6E;&#xFF0C;&#x5982;&#x56FE;&#xFF1A;</li>
+</ul>
+</blockquote>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/reder.png" alt="RenderImage"></p>
+<h5 id="&#x624B;&#x52A8;&#x5BF9;&#x7126;"><a href="#&#x624B;&#x52A8;&#x5BF9;&#x7126;" class="headerlink" title="&#x624B;&#x52A8;&#x5BF9;&#x7126;"></a>&#x624B;&#x52A8;&#x5BF9;&#x7126;</h5><pre><code>// Tap header to focus
+func tapToChangeFocus(tap: UITapGestureRecognizer) {
+    guard !isUsingFrontFacingCamera else {
+        return
+    }
+    // Location
+    let point = tap.locationInView(photoPisplayBoard?.displayHeaderView)
+
+    // Show square
+    showSquareBox(point)
+
+    // Change focus
+    //        let pointInCamera = convertToPointOfInterestFromViewCoordinates(point)
+    let pointInCamera = previewLayer!.captureDevicePointOfInterestForPoint(point)
+    let device = deviceIntput?.device
+    try! device!.lockForConfiguration()
+
+    if device!.focusPointOfInterestSupported {
+        device!.focusPointOfInterest = pointInCamera
+    }
+    if device!.isFocusModeSupported(.ContinuousAutoFocus) {
+        device!.focusMode = .ContinuousAutoFocus
+    }
+    if device!.exposurePointOfInterestSupported {
+        device?.exposureMode = .ContinuousAutoExposure
+        device?.exposurePointOfInterest = pointInCamera
+    }
+    device?.subjectAreaChangeMonitoringEnabled = true
+    device!.focusPointOfInterest = pointInCamera
+
+    device!.unlockForConfiguration()
+}
+</code></pre><p>&#x624B;&#x52A8;&#x5BF9;&#x7126;&#xFF0C;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x70B9;&#x51FB;&#x8BBE;&#x7F6E;&#x8BBE;&#x5907;&#x7684;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x70B9;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x65B9;&#x6846;&#x7684;&#x52A8;&#x753B;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5751;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>&#x7531;&#x4E8E;&#x76F8;&#x673A;&#x7684;&#x4F4D;&#x7F6E;&#x5173;&#x7CFB;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x6B63;&#x5E38;&#x7AD6;&#x7740;&#x653E;&#x7F6E;&#x624B;&#x673A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x5B9E;&#xFF0C;&#x76F8;&#x673A;&#x662F;&#x4FA7;&#x7ACB;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#xFF0C;iPhone&#x7684;&#x76F8;&#x673A;&#x9ED8;&#x8BA4;&#x662F;&#x6A2A;&#x5C4F;home&#x952E;&#x5728;&#x53F3;&#x4E3A;&#x6B63;&#x5E38;&#x4F4D;&#x7F6E;&#xFF0C;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x7684;&#x76F8;&#x673A;&#x7684;&#x4F4D;&#x7F6E;&#x4E00;&#x6837;&#x3002;&#x800C;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x8FD8;&#x4F1A;&#x7528;&#x5230;&#x5904;&#x7406;&#x56FE;&#x7247;&#x65B9;&#x5411;&#x4E0A;</li>
+<li>&#x8BBE;&#x5907;&#x7684;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x70B9;&#x7684;&#x5750;&#x6807;&#x662F;&#x4ECE;&#x5DE6;&#x4E0A;&#x89D2;&#x7684;{0&#xFF0C;0}&#x5230;&#x53F3;&#x4E0B;&#x89D2;&#x7684;{1&#xFF0C;1}&#x3002;&#x800C;&#x7531;&#x4E8E;&#x8BBE;&#x5907;&#x76F8;&#x673A;&#x65B9;&#x5411;&#x95EE;&#x9898;&#xFF0C;&#x7AD6;&#x5C4F;&#x65F6;&#xFF0C;&#x53F3;&#x4E0A;&#x89D2;&#x5C31;&#x662F;&#x76F8;&#x673A;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5DE6;&#x4E0A;&#x89D2;</li>
+</ul>
+</blockquote>
+<p><strong>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x5C06;&#x70B9;&#x51FB;&#x5C4F;&#x5E55;&#x7684;&#x70B9;&#x8F6C;&#x5316;&#x4E3A;&#x76F8;&#x673A;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x70B9;&#xFF0C;&#x7136;&#x800C;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;<code>captureDevicePointOfInterestForPoint()</code>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5E2E;&#x6211;&#x4EEC;&#x8F6C;&#x5316;</strong></p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5173;&#x4E8E;&#x76F8;&#x673A;&#x8BBE;&#x5907;&#x65B9;&#x5411;&#x7684;&#x8D44;&#x6599;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://www.cocoachina.com/ios/20150605/12021.html" target="_blank" rel="external">&#x5982;&#x4F55;&#x5904;&#x7406;iOS&#x4E2D;&#x7167;&#x7247;&#x7684;&#x65B9;&#x5411;</a></p>
+<h5 id="&#x6355;&#x83B7;&#x56FE;&#x7247;"><a href="#&#x6355;&#x83B7;&#x56FE;&#x7247;" class="headerlink" title="&#x6355;&#x83B7;&#x56FE;&#x7247;"></a>&#x6355;&#x83B7;&#x56FE;&#x7247;</h5><p>&#x91CD;&#x5934;&#x620F;&#xFF0C;&#x4E5F;&#x662F;&#x5751;&#x6700;&#x5927;&#x7684;&#x5730;&#x65B9;&#x3002;&#x600E;&#x6837;&#x6355;&#x83B7;&#x76F8;&#x673A;&#x7684;&#x56FE;&#x7247;&#x5E76;&#x8F93;&#x51FA;</p>
+<pre><code>@IBAction func capturePhoto(sender: AnyObject) {
+
+    // Disable the capture button
+    captureButton.enabled = false
+
+    let stillImageConnection = stillImageOutPut?.connectionWithMediaType(AVMediaTypeVideo)
+    // let curDeviceOrientation = UIDevice.currentDevice().orientation
+    // let avCaptureOrientation = FMDeviceOrientation.avOrientationFromDeviceOrientation(curDeviceOrientation)
+    let avCaptureOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.
+    if stillImageConnection!.supportsVideoOrientation {
+        stillImageConnection!.videoOrientation = avCaptureOrientation
+    }
+    stillImageConnection!.videoScaleAndCropFactor = 1
+
+    stillImageOutPut?.captureStillImageAsynchronouslyFromConnection(stillImageConnection, completionHandler: { (imageDataSampleBuffer: CMSampleBufferRef!, error: NSError!) in
+        let jpegData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+
+        if var image = UIImage(data: jpegData) {
+
+            // Fix orientation &amp; crop image
+            image = image.fixOrientation()
+            image = PMImageManger.cropImageAffterCapture(image,toSize: self.previewLayer!.frame.size)
+
+            // Fix interface orientation
+            if !self.orientationManger.deviceOrientationMatchesInterfaceOrientation() {
+                let interfaceOrientation = self.orientationManger.orientation()
+                image = image.rotateImageFromInterfaceOrientation(interfaceOrientation)
+            }
+
+            // Mirror the image
+            if self.isUsingFrontFacingCamera {
+                image = UIImage.init(CGImage: image.CGImage!, scale: image.scale, orientation: UIImageOrientation.UpMirrored)
+
+                let imageV = UIImageView.init(frame: self.previewLayer!.bounds)
+                imageV.image = image
+                self.view.addSubview(imageV)
+            }
+
+            // Save photo
+            let authorStatus = ALAssetsLibrary.authorizationStatus()
+            if  authorStatus == ALAuthorizationStatus.Restricted || authorStatus == ALAuthorizationStatus.Denied {
+                return
+            }
+
+            let library = ALAssetsLibrary()
+            if self.isUsingFrontFacingCamera {
+                let attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault,imageDataSampleBuffer,kCMAttachmentMode_ShouldPropagate)
+                //            let attachments = CMGetAttachment(imageDataSampleBuffer, kCGImagePropertyExifDictionary, nil)
+                library.writeImageToSavedPhotosAlbum(image.CGImage!, metadata: attachments as? [NSObject:AnyObject] , completionBlock: { (url: NSURL!, error: NSError!) in
+
+                })
+            }else {
+                library.writeImageToSavedPhotosAlbum(image.CGImage, orientation: ALAssetOrientation.UpMirrored, completionBlock: { (url: NSURL!, error: NSError!) in
+
+                })
+            }
+
+            // Go to style vc
+            self.photoPisplayBoard?.setState(.SingleShow, image: image, selectedRect: CGRectZero, zoomScale:1, animated: false)
+            let storyBoard = UIStoryboard.init(name: &quot;Main&quot;, bundle: nil)
+            let styleVC = storyBoard.instantiateViewControllerWithIdentifier(&quot;styleImageController&quot;) as? PMImageProcessController
+            styleVC?.fromCapture = true
+            self.navigationController?.pushViewController(styleVC!, animated: true)
+        }
+
+        // Stop session
+        self.session.stopRunning()
+    })
+}
+</code></pre><p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x56FE;&#x7247;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8F93;&#x51FA;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x77E5;<code>AVCaptureStillImageOutput</code>&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x8FD9;&#x91CC;&#x83B7;&#x5F97;<code>AVCaptionConnection</code>&#x6765;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x5C06;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;&#x540C;&#x6B65;&#x5230;&#x76F8;&#x673A;&#x89C6;&#x9891;&#x4E0A;&#x3002;&#xFF08;<em>&#x6709;&#x4EBA;&#x8BA8;&#x8BBA;&#x8BF4;&#x5F53;&#x8BBE;&#x5907;&#x6A2A;&#x5C4F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x5C06;&#x4F20;&#x7ED9;&#x76F8;&#x673A;&#x89C6;&#x9891;&#x7684;&#x65B9;&#x5411;&#x53D6;&#x76F8;&#x53CD;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x4F46;&#x6D4B;&#x8BD5;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x53EA;&#x8981;&#x4F20;&#x5165;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x544A;&#x77E5;&#x76F8;&#x673A;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x771F;&#x6B63;&#x65B9;&#x5411;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</em>&#xFF09;</p>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x5927;&#x5751;&#xFF1A;<strong>&#x7531;&#x4E8E;Prisma&#x53EA;&#x662F;&#x652F;&#x6301;Portrait&#x6A21;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;&#x603B;&#x662F;Portrait&#x7684;&#xFF0C;&#x5373;&#x7AD6;&#x5C4F;&#x7684;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x65F6;&#x5019;&#x4F20;&#x9012;&#x7ED9;&#x76F8;&#x673A;&#x7684;&#x540E;&#xFF0C;&#x76F8;&#x673A;&#x8BA4;&#x4E3A;&#x7684;&#x65B9;&#x5411;&#x5176;&#x5B9E;&#x5411;&#x53F3;&#x65CB;&#x8F6C;&#x4E86;90&#x5EA6;&#xFF0C;&#x56E0;&#x4E3A;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x4E86;&#xFF0C;&#x76F8;&#x673A;&#x7684;&#x6B63;&#x5E38;&#x65B9;&#x5411;&#x662F;&#x6A2A;&#x5C4F;&#x5411;&#x5DE6;</strong><br><strong>&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x8F93;&#x51FA;&#x7684;image&#x65F6;&#xFF0C;image&#x88AB;&#x8D4B;&#x503C;&#x7684;&#x65B9;&#x5411;&#x5C31;&#x662F;&#x5411;&#x53F3;&#x65CB;&#x8F6C;90&#x5EA6;&#xFF1A;<code>UIImageOrientation.Right</code>&#xFF08;&#x76F8;&#x673A;&#x7406;&#x89E3;&#x7684;&#x65B9;&#x5411;&#xFF09;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x4FDD;&#x5B58;&#x51FA;&#x6765;&#x7684;&#x56FE;&#x7247;&#x5C31;&#x4F1A;&#x662F;&#x5411;&#x5DE6;&#x65CB;&#x8F6C;90&#x5EA6;&#x7684;&#xFF08;&#x56FE;&#x7247;&#x8981;&#x653E;&#x6B63;&#x561B;&#xFF0C;&#x60F3;&#x8C61;&#x76F8;&#x673A;&#x653E;&#x6B63;&#x7684;&#x6837;&#x5B50;&#xFF09;</strong></p>
+</blockquote>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x4E8E;&#x521A;&#x521A;&#x6355;&#x83B7;&#x7684;&#x56FE;&#x7247;&#x8FDB;&#x884C;orientation&#x7684;&#x5904;&#x7406;<code>fixOrientation()</code>,&#x8FD9;&#x6837;&#x56FE;&#x7247;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x9884;&#x60F3;&#x4E2D;&#x62CD;&#x6444;&#x7684;&#x65B9;&#x5411;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x5BF9;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x88C1;&#x5207;&#x5904;&#x7406;</p>
+<blockquote>
+<p>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x8FC7;<code>AVCaptureVideoPreviewLayer</code>&#x662F;&#x6709;&#x81EA;&#x5DF1;&#x7684;size frame&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x7684;1 &#xFF1A;1&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x800C;&#x662F;&#x5DE6;&#x53F3;&#x586B;&#x5145;&#x5C45;&#x4E2D;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8981;&#x5BF9;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x88C1;&#x5207;&#x5904;&#x7406;&#x3002;</p>
+</blockquote>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/cropimage.png" alt="CropImage"></p>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x62CD;&#x6444;&#x7684;&#x56FE;&#x50CF;&#x4E86;&#x3002;</p>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x7531;&#x4E8E;Prisma&#x53EA;&#x662F;&#x652F;&#x6301;Portrait&#x65B9;&#x5411;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x6A2A;&#x5C4F;&#x5411;&#x53F3;&#x62CD;&#x6444;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6B64;&#x65F6;device&#x7684;&#x65B9;&#x5411;&#x4F9D;&#x7136;&#x662F;Portrait&#xFF08;<em>plist&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x65B9;&#x5411;&#x51B3;&#x5B9A;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;</em>&#xFF09;&#xFF0C;&#x76F8;&#x673A;&#x4ECD;&#x7136;&#x662F;&#x8BA4;&#x4E3A;&#x4FA7;&#x7ACB;&#x5411;&#x53F3;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x5373;&#x4FBF;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>fixOrientation()</code>&#x6062;&#x590D;&#x5230;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x7531;&#x4E8E;&#x6A2A;&#x5C4F;&#x5411;&#x53F3;&#x7684;&#x7F18;&#x6545;&#xFF0C;&#x56FE;&#x7247;&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x5411;&#x5DE6;&#x8F6C;&#x52A8;90&#x5EA6;&#xFF08;<strong>&#x867D;&#x7136;&#xFF0C;&#x5C4F;&#x5E55;&#x6A2A;&#x5C4F;&#x5411;&#x53F3;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x76F8;&#x673A;&#x6765;&#x8BF4;&#x4EFB;&#x7136;&#x662F;&#x4FA7;&#x7ACB;&#x5411;&#x53F3;&#x3002;&#x800C;&#x6B64;&#x65F6;&#xFF0C;&#x5C4F;&#x5E55;&#x9876;&#x90E8;&#x95EA;&#x5149;&#x706F;&#x4E00;&#x4FA7;&#x7684;&#x4F4D;&#x7F6E;&#x6B63;&#x597D;&#x662F;&#x6A2A;&#x5C4F;&#x4E0B;&#x56FE;&#x7247;&#x7684;&#x53F3;&#x4FA7;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6B63;&#x8FC7;&#x6765;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x56FE;&#x7247;&#x53F3;&#x4FA7;&#x6210;&#x4E3A;&#x56FE;&#x7247;&#x9876;&#x90E8;&#x7684;&#x72B6;&#x51B5;</strong>&#xFF09;</p>
+<blockquote>
+<p>&#x8FD9;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x91CD;&#x529B;&#x611F;&#x5E94;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x83B7;&#x53D6;&#x5C4F;&#x5E55;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5411; &#x2014;&#x2014;<strong>&#x662F;&#x771F;&#x6B63;&#x7684;&#x5C4F;&#x5E55;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x4E0D;&#x662F;UIDevice&#x7684;&#x65B9;&#x5411;</strong></p>
+</blockquote>
+<p>&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;<code>FMDeviceOrientation</code>&#xFF0C;&#x5305;&#x542B;<code>CMMotionManager</code>&#x5C5E;&#x6027;&#xFF0C;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x65B9;&#x5411;&#xFF1A;</p>
+<pre><code>private func actualDeviceOrientationFromAccelerometer() -&gt; UIDeviceOrientation {
+    let acceleration = motionManager.accelerometerData!.acceleration
+    if acceleration.z &lt; -0.75 {
+        return UIDeviceOrientation.FaceUp
+    }
+
+    if acceleration.z &gt; 0.75 {
+        return UIDeviceOrientation.FaceDown
+    }
+
+    let scaling = 1.0 / (fabs(acceleration.x) + fabs(acceleration.y))
+
+    let x = acceleration.x * scaling
+    let y = acceleration.y * scaling
+
+    if x &lt; -0.5 {
+        return UIDeviceOrientation.LandscapeLeft
+    }
+
+    if x &gt; 0.5 {
+        return UIDeviceOrientation.LandscapeRight
+    }
+
+    if y &gt; 0.5 {
+        return UIDeviceOrientation.PortraitUpsideDown
+    }
+
+    return UIDeviceOrientation.Portrait
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x83B7;&#x53D6;&#x7684;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x7684;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x624B;&#x673A;&#x7AD6;&#x5C4F;&#x5C31;&#x662F;Portrait&#xFF0C;&#x53F3;&#x4FA7;&#x6A2A;&#x5C4F;&#x5C31;&#x662F;LandScapeRight&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E86;&#x5F53;&#x524D;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5411;&#x4E0E;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5411;&#x662F;&#x5426;&#x4E00;&#x81F4;&#x6765;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5BF9;&#x56FE;&#x7247;&#x505A;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x53F3;&#x4FA7;&#x6A2A;&#x5C4F;&#x62CD;&#x6444;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x51FA;&#x6765;&#x7684;&#x6548;&#x679C;&#x662F;&#x5411;&#x5DE6;&#x65CB;&#x8F6C;90&#x5EA6;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>fixOrientation()</code>&#x7684;&#x65B9;&#x5F0F;&#x518D;&#x6B21;&#x5904;&#x7406;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x505A;&#x53C2;&#x6570;&#x8C03;&#x6574;&#xFF1A;</p>
+<blockquote>
+<p>&#x6B64;&#x65F6;&#x56FE;&#x7247;&#x5411;&#x5DE6;&#x65CB;&#x8F6C;90&#x5EA6;&#xFF0C;&#x6B63;&#x597D;&#x8DDF;&#x6CA1;&#x6709;&#x5904;&#x7406;&#x539F;&#x59CB;&#x56FE;&#x7247;&#x662F;&#x7684;&#x65B9;&#x5411;&#x4E00;&#x6837;&#x3002;&#x76F8;&#x673A;&#x5750;&#x6807;&#x7CFB;&#x8BA4;&#x4E3A;&#x7AD6;&#x5C4F;&#x662F;&#x5411;&#x53F3;&#x4FA7;&#x7ACB;&#xFF0C;image&#x7684;&#x65B9;&#x5411;&#x4E5F;&#x662F;Right&#x4E86;&#xFF0C;&#x51FA;&#x6765;&#x7684;&#x56FE;&#x7247;&#x4E5F;&#x662F;&#x5411;&#x5DE6;&#x65CB;&#x8F6C;90&#x5EA6;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x56FE;&#x7247;&#x7684;&#x65B9;&#x5411;&#x53C2;&#x6570;&#x4E5F;&#x662F;Right&#xFF0C;&#x8C03;&#x7528;<code>fixOrientation(imageOrientation: UIImageOrientation)</code>&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5047;&#x5B9A;&#x56FE;&#x7247;&#x662F;&#x76F8;&#x673A;&#x5411;&#x53F3;&#x4FA7;&#x7ACB;&#x62CD;&#x6444;&#xFF0C;&#x901A;&#x8FC7;fix&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x5F97;&#x5230;&#x6B63;&#x5E38;&#x7684;&#x56FE;&#x7247;&#x3002;&#x56E0;&#x6B64;&#x4E5F;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF1A;</p>
+</blockquote>
+<p><strong>&#x754C;&#x9762;&#x7684;&#x65B9;&#x5411;&#x662F;&#x54EA;&#x4E2A;&#x65B9;&#x5411;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x8C03;&#x7528;<code>fixOrientation(imageOrientation: UIImageOrientation)</code>&#x540E;&#xFF0C;&#x5C31;&#x518D;&#x4F20;&#x5165;&#x54EA;&#x4E2A;&#x65B9;&#x5411;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</strong></p>
+<p>&#x5B8C;&#x6574;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>// Fix orientation &amp; crop image
+image = image.fixOrientation()
+image = PMImageManger.cropImageAffterCapture(image,toSize: self.previewLayer!.frame.size)
+
+// Fix interface orientation
+if !self.orientationManger.deviceOrientationMatchesInterfaceOrientation() {
+    let interfaceOrientation = self.orientationManger.orientation()
+    image = image.rotateImageFromInterfaceOrientation(interfaceOrientation)
+}
+</code></pre><p>&#x6700;&#x7EC8;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x56FE;&#x7247;&#x3002;&#x6839;&#x636E;&#x914D;&#x7F6E;&#xFF0C;&#x8FDB;&#x884C;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x76F8;&#x518C;&#x5C31;&#x597D;&#x4E86;&#x3002;&#xFF08;Prisma&#x7EC6;&#x8282;&#x7684;&#x5BF9;&#x4E8E;&#x62CD;&#x6444;&#x6309;&#x94AE;&#x90FD;&#x505A;&#x4E86;&#x7F29;&#x653E;&#x70B9;&#x51FB;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x91CC;&#x5BF9;&#x4E8E;&#x5B9E;&#x73B0;&#x8FC7;&#x7A0B;&#x5C31;&#x4E0D;&#x505A;&#x4ECB;&#x7ECD;&#x4E86;&#xFF09;</p>
+<p>&#x5B9E;&#x73B0;&#x6548;&#x679C;&#x5982;&#x4E0B;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/camera.gif" alt="&#x7167;&#x76F8;&#x6548;&#x679C;"></p>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x673A;&#x53C2;&#x8003;&#x8D44;&#x6599;<a href="http://www.cocoachina.com/ios/20150311/11296.html" target="_blank" rel="external">iOS&#x4E0A;&#x76F8;&#x673A;&#x6355;&#x83B7;</a></p>
+<p><br></p>
+<h4 id="&#x76F8;&#x518C;&#x9009;&#x62E9;"><a href="#&#x76F8;&#x518C;&#x9009;&#x62E9;" class="headerlink" title="&#x76F8;&#x518C;&#x9009;&#x62E9;"></a>&#x76F8;&#x518C;&#x9009;&#x62E9;</h4><p>&#x4ECE;&#x4E0A;&#x9762;Prisma&#x7684;&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;Prisma&#x4F7F;&#x7528;&#x7684;&#x76F8;&#x518C;&#x6846;&#x67B6;&#x662F;<code>AssetsLibrary</code>&#xFF0C;&#x5728;iOS8&#x4E4B;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x589E;&#x52A0;&#x4E86;&#x76F8;&#x518C;&#x6846;&#x67B6;<code>Photos</code>&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x662F;&#x91C7;&#x7528;<code>Photos</code>&#x6846;&#x67B6;&#x5B9E;&#x73B0;&#x76F8;&#x518C;&#x529F;&#x80FD;</p>
+<h5 id="PrsimaImagePicker"><a href="#PrsimaImagePicker" class="headerlink" title="PrsimaImagePicker"></a>PrsimaImagePicker</h5><p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x4F7F;&#x7528;&#x3002;&#x6700;&#x521D;&#xFF0C;&#x6253;&#x7B97;&#x91CD;&#x5199;Prisma&#x4E5F;&#x662F;&#x56E0;&#x4E3A;&#x559C;&#x6B22;&#x4E0A;Prisma&#x6709;&#x610F;&#x601D;&#x7684;&#x56FE;&#x7247;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x800C;&#x51B3;&#x5B9A;&#x81EA;&#x5DF1;&#x4E5F;&#x8981;&#x505A;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x5206;&#x6790;Prisma&#x56FE;&#x7247;&#x9009;&#x62E9;&#x5668;&#x7684;&#x7ED3;&#x6784;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>&#x9876;&#x90E8;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;view&#x7528;&#x4E8E;&#x4F5C;&#x4E3A;&#x5927;&#x56FE;&#x7684;&#x5448;&#x73B0;&#xFF0C;&#x4E0E;&#x56FE;&#x7247;&#x7684;&#x7B80;&#x5355;&#x7F29;&#x653E;&#x7F16;&#x8F91;</li>
+<li>&#x4E0B;&#x9762;&#x662F;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x76F8;&#x518C;&#x5185;&#x7684;&#x6240;&#x6709;&#x7167;&#x7247;&#xFF0C;&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5927;&#x56FE;&#x5207;&#x6362;&#x3002;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x70B9;&#x51FB;&#x7684;&#x4F4D;&#x7F6E;&#x4E0E;&#x5927;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#x4E0D;&#x540C;&#xFF0C;&#x4F1A;&#x505A;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x8C03;&#x6574;&#x3002;&#x9996;&#x5148;&#x4FDD;&#x8BC1;&#x6240;&#x9009;&#x56FE;&#x7247;&#x5728;&#x5927;&#x56FE;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;&#xFF0C;&#x5176;&#x6B21;&#x662F;&#x6240;&#x9009;&#x56FE;&#x7247;&#x5982;&#x679C;&#x906E;&#x6321;&#x4F1A;&#x81EA;&#x52A8;&#x5168;&#x90E8;&#x663E;&#x9732;</li>
+<li>&#x5728;&#x4EA4;&#x4E92;&#x4E0A;&#xFF0C;&#x5E95;&#x90E8;&#x5217;&#x8868;&#x5355;&#x72EC;&#x6ED1;&#x52A8;&#x3002;&#x5F53;&#x624B;&#x52BF;&#x79FB;&#x52A8;&#x5230;&#x5927;&#x56FE;&#x5E95;&#x90E8;&#x8FB9;&#x7F18;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5927;&#x56FE;&#x8DDF;&#x968F;&#x6ED1;&#x52A8;&#xFF0C;&#x4ECE;&#x800C;&#x589E;&#x52A0;&#x53EF;&#x89C6;&#x9762;&#x79EF;</li>
+</ul>
+</blockquote>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x7684;&#x529F;&#x80FD;&#x5206;&#x6790;&#xFF0C;&#x51B3;&#x5B9A;&#x91C7;&#x7528;&#x7EA6;&#x675F;&#x52A8;&#x753B;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x5927;&#x56FE;&#x4E0E;&#x5217;&#x8868;&#x7684;&#x4F4D;&#x7F6E;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x53EA;&#x9700;&#x6539;&#x53D8;&#x9876;&#x90E8;&#x5927;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x7136;&#x7684;&#x6539;&#x53D8;&#x5E95;&#x90E8;&#x5217;&#x8868;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x6765;&#x8FBE;&#x5230;&#x5217;&#x8868;&#x9762;&#x79EF;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x53E6;&#x4E00;&#x70B9;&#xFF0C;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;Prisma&#x4E2D;&#x5BF9;&#x4E8E;&#x5E95;&#x90E8;&#x5217;&#x8868;&#x4E0E;&#x9876;&#x90E8;&#x5927;&#x56FE;header&#x7684;&#x624B;&#x52BF;&#x5904;&#x7406;&#x662F;&#x8FDE;&#x8D2F;&#x7684;&#xFF1A;<em>&#x5728;&#x6ED1;&#x52A8;&#x5E95;&#x90E8;&#x5217;&#x8868;&#x540C;&#x65F6;&#x6ED1;&#x52A8;&#x9876;&#x90E8;header&#x65F6;&#xFF0C;&#x9876;&#x90E8;header&#x5230;&#x8FBE;&#x9876;&#x90E8;&#x540E;&#xFF0C;&#x5E95;&#x90E8;&#x5217;&#x8868;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6709;&#x60EF;&#x6027;&#x7684;&#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#x3002;</em>&#x6240;&#x4EE5;&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x60F3;&#x8981;&#x4F7F;&#x7528;UIDynimc&#x7684;&#x65B9;&#x5F0F;&#x7ED9;&#x5217;&#x8868;&#x4E0E;header&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5171;&#x7528;&#x7684;&#x624B;&#x52BF;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x540E;&#x6765;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x5F88;&#x662F;&#x9EBB;&#x70E6;&#xFF0C;&#x6548;&#x679C;&#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x4E0D;&#x5C3D;&#x4EBA;&#x610F;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x91C7;&#x7528;&#x4E86;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;<strong>Method Swizzle</strong></p>
+<blockquote>
+<p>&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x4EA4;&#x6362;<code>UIScrollView</code>&#x7684;<code>PanGestureRecognizer</code>&#x7684;action&#x65B9;&#x6CD5;&#xFF08;&#x8FD9;&#x4E2A;action&#x7684;&#x83B7;&#x5F97;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6253;&#x5370;&#x624B;&#x52BF;&#x624D;&#x83B7;&#x53D6;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x7ED9;<code>UIScrollView</code>&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x624B;&#x52BF;&#x6ED1;&#x52A8;&#x64CD;&#x4F5C;&#x7684;&#x56DE;&#x8C03;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;<code>UIScrollView</code>&#x6EDA;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x540C;&#x65F6;&#x5904;&#x7406;&#x9876;&#x90E8;&#x5927;&#x56FE;header&#x7684;&#x4F4D;&#x7F6E;&#x4E86;</p>
+</blockquote>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x7EC6;&#x8282;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x7531;&#x4E8E;&#x91C7;&#x7528;&#x7EA6;&#x675F;&#x505A;&#x52A8;&#x753B;&#x3002;&#x5728;UIKit&#x52A8;&#x4F5C;&#x753B;&#x5904;&#x7406;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x80FD;&#x5355;&#x7EAF;&#x7684;&#x6539;&#x53D8;&#x7EA6;&#x675F;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#xFF0C;&#x8FD9;&#x6837;&#x53EA;&#x662F;&#x901A;&#x77E5;&#x7CFB;&#x7EDF;&#xFF0C;&#x7EA6;&#x675F;&#x6539;&#x53D8;&#x5DF2;&#x7ECF;&#x5904;&#x4E8E;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5E03;&#x5C40;&#x7684;&#x72B6;&#x6001;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x4E3B;&#x52A8;&#x8C03;&#x7528;<code>setNeedsLayout</code>&#x6765;&#x5E03;&#x5C40;UI&#xFF0C;&#x5426;&#x5219;&#x662F;&#x6CA1;&#x6709;&#x52A8;&#x753B;&#x6548;&#x679C;&#x7684;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>UIView.animateWithDuration(self.constParams.backHeaderAnimationDuration, delay: 0, options: [UIViewAnimationOptions.AllowUserInteraction, UIViewAnimationOptions.CurveLinear], animations: {
+     self.headerTopConstraints.constant = 0
+     self.view.layoutIfNeeded()
+     }, completion: { (finish: Bool) in
+
+})
+</code></pre><p>&#x5B9E;&#x73B0;&#x7684;&#x6548;&#x679C;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/imagepicker.gif" alt="&#x76F8;&#x518C;&#x9009;&#x62E9;"></p>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x56FE;&#x7247;&#x9009;&#x62E9;&#x529F;&#x80FD;&#x754C;&#x9762;&#x7684;&#x91CD;&#x70B9;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x9700;&#x8981;&#x5904;&#x7406;&#x76F8;&#x518C;&#x4E86;</p>
+<h5 id="&#x83B7;&#x53D6;&#x76F8;&#x518C;&#x56FE;&#x7247;"><a href="#&#x83B7;&#x53D6;&#x76F8;&#x518C;&#x56FE;&#x7247;" class="headerlink" title="&#x83B7;&#x53D6;&#x76F8;&#x518C;&#x56FE;&#x7247;"></a>&#x83B7;&#x53D6;&#x76F8;&#x518C;&#x56FE;&#x7247;</h5><p>&#x5BFC;&#x5165;<code>Photos</code>&#x6846;&#x67B6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x7C7B;&#x6709;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li><strong>PHAssetCollection</strong> &#x76F8;&#x518C;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#xFF0C;&#x5904;&#x7406;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x53C2;&#x6570;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x76F8;&#x518C;</li>
+<li><strong>PHAsset</strong> &#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x76F8;&#x518C;&#x7167;&#x7247;&#x4FE1;&#x606F;&#xFF0C;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x76F8;&#x518C;&#x4E2D;&#x7684;&#x7167;&#x7247;</li>
+<li><strong>PHFetchResult</strong> &#x5904;&#x7406;&#x76F8;&#x518C;&#x7167;&#x7247;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x83B7;&#x53D6;&#x5177;&#x4F53;&#x7684;&#x76F8;&#x518C;&#x5185;&#x5BB9;&#x6216;&#x8005;&#x7167;&#x7247;&#x5185;&#x5BB9;</li>
+</ul>
+</blockquote>
+<p><br><br>&#x9996;&#x5148;&#xFF0C;&#x540C;&#x6837;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x7684;&#x8BA4;&#x8BC1;</p>
+<pre><code>/// Photolibrary authorization
+class func photoAuthorization(canGoAssets: ((Bool)-&gt; Void)!) {
+
+    let PhotoStatus: PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+    switch (PhotoStatus) {
+    case .NotDetermined:
+        PHPhotoLibrary.requestAuthorization { (status: PHAuthorizationStatus) in
+            dispatch_async(dispatch_get_main_queue(), {
+                switch (status) {
+                case .Authorized:
+                    canGoAssets(true)
+                    break
+                default:
+                    canGoAssets(false)
+                    break
+                }
+            })
+        }
+        break
+    case .Authorized:
+        canGoAssets(true)
+        break
+    default:
+        canGoAssets(false)
+        break
+    }
+}
+</code></pre><p>&#x8BA4;&#x8BC1;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x7684;&#x76F8;&#x518C;&#xFF08;&#x6216;&#x8005;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x7684;&#x76F8;&#x518C;&#xFF09;</p>
+<blockquote>
+<p>&#x76F8;&#x518C;&#x83B7;&#x53D6;&#x901A;&#x8FC7;<code>public class func fetchAssetCollectionsWithType(type: PHAssetCollectionType, subtype: PHAssetCollectionSubtype, options: PHFetchOptions?) -&gt; PHFetchResult</code>&#x63A5;&#x53E3;&#x679A;&#x4E3E;&#x8FD4;&#x56DE;&#x7684;<code>PHFetchResult</code>&#x6765;&#x83B7;&#x53D6;&#x76F8;&#x518C;&#xFF0C;&#x5176;&#x4E2D;<code>PHAssetCollectionType</code>&#x4E0E;<code>PHAssetCollectionSubtype</code>&#x914D;&#x5408;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6211;&#x4EEC;&#x5236;&#x5B9A;&#x7684;&#x76F8;&#x518C;</p>
+</blockquote>
+<pre><code>var photoGroups:[PHAssetCollection] = [PHAssetCollection]()
+
+// Camera
+let cameraRoll: PHAssetCollection = (PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .SmartAlbumUserLibrary, options: nil).lastObject as? PHAssetCollection)!
+if cameraRoll.photosCount &gt; 0 {
+    photoGroups.append(cameraRoll)
+}
+
+// Favorites
+let favorites: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .SmartAlbumFavorites, options: nil)
+favorites.enumerateObjectsWithOptions(.Reverse) { (obj, index: Int, stop: UnsafeMutablePointer&lt;ObjCBool&gt;) in
+    let collection = obj as! PHAssetCollection
+    guard collection.photosCount &gt; 0 else {
+        return
+    }
+    photoGroups.append(collection)
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x83B7;&#x53D6;&#x76F8;&#x518C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x624D;&#x80FD;&#x83B7;&#x53D6;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x76F8;&#x518C;</p>
+<pre><code>enum PHAssetCollectionType : Int {
+    case Album //&#x4ECE; iTunes &#x540C;&#x6B65;&#x6765;&#x7684;&#x76F8;&#x518C;&#xFF0C;&#x4EE5;&#x53CA;&#x7528;&#x6237;&#x5728; Photos &#x4E2D;&#x81EA;&#x5DF1;&#x5EFA;&#x7ACB;&#x7684;&#x76F8;&#x518C;
+    case SmartAlbum //&#x7ECF;&#x7531;&#x76F8;&#x673A;&#x5F97;&#x6765;&#x7684;&#x76F8;&#x518C;
+    case Moment //Photos &#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x65F6;&#x95F4;&#x5206;&#x7EC4;&#x7684;&#x76F8;&#x518C;
+}
+
+enum PHAssetCollectionSubtype : Int {
+    case AlbumRegular //&#x7528;&#x6237;&#x5728; Photos &#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x76F8;&#x518C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x6240;&#x8C13;&#x7684;&#x903B;&#x8F91;&#x76F8;&#x518C;
+    case AlbumSyncedEvent //&#x4F7F;&#x7528; iTunes &#x4ECE; Photos &#x7167;&#x7247;&#x5E93;&#x6216;&#x8005; iPhoto &#x7167;&#x7247;&#x5E93;&#x540C;&#x6B65;&#x8FC7;&#x6765;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;iTunes 12 &#x4EE5;&#x53CA;iOS 9.0 beta4&#x4E0A;&#xFF0C;&#x9009;&#x7528;&#x8BE5;&#x7C7B;&#x578B;&#x6CA1;&#x6CD5;&#x83B7;&#x53D6;&#x540C;&#x6B65;&#x7684;&#x4E8B;&#x4EF6;&#x76F8;&#x518C;&#xFF0C;&#x800C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;AlbumSyncedAlbum&#x3002;
+       case AlbumSyncedFaces //&#x4F7F;&#x7528; iTunes &#x4ECE; Photos &#x7167;&#x7247;&#x5E93;&#x6216;&#x8005; iPhoto &#x7167;&#x7247;&#x5E93;&#x540C;&#x6B65;&#x7684;&#x4EBA;&#x7269;&#x76F8;&#x518C;&#x3002;
+    case AlbumSyncedAlbum //&#x505A;&#x4E86; AlbumSyncedEvent &#x5E94;&#x8BE5;&#x505A;&#x7684;&#x4E8B;
+    case AlbumImported //&#x4ECE;&#x76F8;&#x673A;&#x6216;&#x662F;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x5BFC;&#x5165;&#x7684;&#x76F8;&#x518C;&#xFF0C;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4F7F;&#x7528;&#x7ECF;&#x9A8C;&#xFF0C;&#x6CA1;&#x6CD5;&#x9A8C;&#x8BC1;&#x3002;
+    case AlbumMyPhotoStream //&#x7528;&#x6237;&#x7684; iCloud &#x7167;&#x7247;&#x6D41;
+    case AlbumCloudShared //&#x7528;&#x6237;&#x4F7F;&#x7528; iCloud &#x5171;&#x4EAB;&#x7684;&#x76F8;&#x518C;
+    case SmartAlbumGeneric //&#x6587;&#x6863;&#x89E3;&#x91CA;&#x4E3A;&#x975E;&#x7279;&#x6B8A;&#x7C7B;&#x578B;&#x7684;&#x76F8;&#x518C;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x4ECE; iPhoto &#x540C;&#x6B65;&#x8FC7;&#x6765;&#x7684;&#x76F8;&#x518C;&#x3002;&#x7531;&#x4E8E;&#x672C;&#x4EBA;&#x7684; iPhoto &#x5DF2;&#x88AB; Photos &#x66FF;&#x4EE3;&#xFF0C;&#x65E0;&#x6CD5;&#x9A8C;&#x8BC1;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5728;&#x6211;&#x7684; iPad mini &#x4E0A;&#x662F;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x7684;&#xFF0C;&#x800C;&#x4E0B;&#x9762;&#x7C7B;&#x578B;&#x7684;&#x76F8;&#x518C;&#xFF0C;&#x5C3D;&#x7BA1;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x7167;&#x7247;&#x6216;&#x89C6;&#x9891;&#xFF0C;&#x4F46;&#x80FD;&#x591F;&#x83B7;&#x53D6;&#x5230;&#x3002;
+    case SmartAlbumPanoramas //&#x76F8;&#x673A;&#x62CD;&#x6444;&#x7684;&#x5168;&#x666F;&#x7167;&#x7247;
+    case SmartAlbumVideos //&#x76F8;&#x673A;&#x62CD;&#x6444;&#x7684;&#x89C6;&#x9891;
+    case SmartAlbumFavorites //&#x6536;&#x85CF;&#x6587;&#x4EF6;&#x5939;
+    case SmartAlbumTimelapses //&#x5EF6;&#x65F6;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x5939;&#x4E2D;
+    case SmartAlbumAllHidden //&#x5305;&#x542B;&#x9690;&#x85CF;&#x7167;&#x7247;&#x6216;&#x89C6;&#x9891;&#x7684;&#x6587;&#x4EF6;&#x5939;
+    case SmartAlbumRecentlyAdded //&#x76F8;&#x673A;&#x8FD1;&#x671F;&#x62CD;&#x6444;&#x7684;&#x7167;&#x7247;&#x6216;&#x89C6;&#x9891;
+    case SmartAlbumBursts //&#x8FDE;&#x62CD;&#x6A21;&#x5F0F;&#x62CD;&#x6444;&#x7684;&#x7167;&#x7247;&#xFF0C;&#x5728; iPad mini &#x4E0A;&#x6309;&#x4F4F;&#x5FEB;&#x95E8;&#x4E0D;&#x653E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x7167;&#x7247;&#x4F9D;&#x7136;&#x6CA1;&#x6709;&#x5B58;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x76F8;&#x673A;&#x76F8;&#x518C;&#x91CC;&#x3002;
+    case SmartAlbumSlomoVideos //Slomo &#x662F; slow motion &#x7684;&#x7F29;&#x5199;&#xFF0C;&#x9AD8;&#x901F;&#x6444;&#x5F71;&#x6162;&#x52A8;&#x4F5C;&#x89E3;&#x6790;&#xFF0C;&#x5728;&#x8BE5;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;iOS &#x8BBE;&#x5907;&#x4EE5;120&#x5E27;&#x62CD;&#x6444;&#x3002;&#x4E0D;&#x8FC7;&#x6211;&#x7684; iPad mini &#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x6CA1;&#x6CD5;&#x9A8C;&#x8BC1;&#x3002;
+    case SmartAlbumUserLibrary //&#x8FD9;&#x4E2A;&#x547D;&#x540D;&#x6700;&#x795E;&#x5947;&#x4E86;&#xFF0C;&#x5C31;&#x662F;&#x76F8;&#x673A;&#x76F8;&#x518C;&#xFF0C;&#x6240;&#x6709;&#x76F8;&#x673A;&#x62CD;&#x6444;&#x7684;&#x7167;&#x7247;&#x6216;&#x89C6;&#x9891;&#x90FD;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x8BE5;&#x76F8;&#x518C;&#x4E2D;&#xFF0C;&#x800C;&#x4E14;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x4FDD;&#x5B58;&#x7684;&#x7167;&#x7247;&#x4E5F;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x8FD9;&#x91CC;&#x3002;
+    case Any //&#x5305;&#x542B;&#x6240;&#x6709;&#x7C7B;&#x578B;
+}
+</code></pre><blockquote>
+<p>&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;type&#x4E0E;subtype&#x8981;&#x5BF9;&#x5E94;</p>
+</blockquote>
+<p><a href="http://www.jianshu.com/p/42e5d2f75452/" target="_blank" rel="external">&#x53C2;&#x8003;&#x6587;&#x7AE0;</a></p>
+<p><br><br>&#x83B7;&#x53D6;&#x76EE;&#x6807;&#x76F8;&#x518C;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x8981;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x76F8;&#x518C;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7167;&#x7247;&#x4E86;</p>
+<blockquote>
+<p>&#x7167;&#x7247;&#x83B7;&#x53D6;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>PHAsset</code>&#x7684;<code>public class func fetchAssetsInAssetCollection(assetCollection: PHAssetCollection, options: PHFetchOptions?) -&gt; PHFetchResult</code>&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x6837;&#x679A;&#x4E3E;&#x8FD4;&#x56DE;&#x7684;<code>PHFetchResult</code>&#x83B7;&#x53D6;&#x56FE;&#x7247;&#x5185;&#x5BB9;</p>
+</blockquote>
+<pre><code>/// Get photos from an album
+class func photoAssetsForAlbum(collection: PHAssetCollection) -&gt; [PHAsset] {
+    var photoAssets:[PHAsset] = [PHAsset]()
+
+    let asstes: PHFetchResult = PHAsset.fetchAssetsInAssetCollection(collection, options: nil)
+    asstes.enumerateObjectsWithOptions(NSEnumerationOptions.Reverse) { (obj, index: Int, stop: UnsafeMutablePointer&lt;ObjCBool&gt;) in
+        photoAssets.append(obj as! PHAsset)
+    }
+    return photoAssets
+}
+</code></pre><p>&#x76F8;&#x518C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7684;&#x6548;&#x679C;&#x5982;&#x4E0B;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/group.gif" alt="&#x76F8;&#x518C;group"></p>
+<h5 id="&#x7167;&#x7247;&#x7F29;&#x653E;&#x65CB;&#x8F6C;&#x7F16;&#x8F91;"><a href="#&#x7167;&#x7247;&#x7F29;&#x653E;&#x65CB;&#x8F6C;&#x7F16;&#x8F91;" class="headerlink" title="&#x7167;&#x7247;&#x7F29;&#x653E;&#x65CB;&#x8F6C;&#x7F16;&#x8F91;"></a>&#x7167;&#x7247;&#x7F29;&#x653E;&#x65CB;&#x8F6C;&#x7F16;&#x8F91;</h5><p>&#x8BF4;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x7F29;&#x653E;&#x4EC0;&#x4E48;&#x7684;&#x53EA;&#x662F;&#x91C7;&#x7528;<code>UIScrollView</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6709;&#x610F;&#x601D;&#x7684;&#x662F;&#xFF0C;Prisma&#x771F;&#x662F;&#x7EC6;&#x8282;&#x505A;&#x7684;&#x5F88;&#x5230;&#x4F4D;&#x3002;</p>
+<blockquote>
+<ul>
+<li>&#x5728;&#x56FE;&#x7247;&#x9009;&#x62E9;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4F1A;&#x6709;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x4E5D;&#x5BAB;&#x683C;&#xFF0C;&#x62D6;&#x52A8;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x683C;&#x5B50;&#x6807;&#x5C3A;&#x4F1A;&#x663E;&#x793A;&#x3002;&#x7167;&#x7247;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5E38;&#x663E;&#x793A;&#x683C;&#x5B50;&#x6807;&#x5C3A;</li>
+<li>&#x4E00;&#x5F00;&#x59CB;&#x53EA;&#x662F;&#x8BA4;&#x4E3A;Prisma&#x7684;&#x4E5D;&#x5BAB;&#x683C;&#x662F;&#x4E00;&#x4E2A;&#x50CF;&#x7D20;&#x7684;&#x767D;&#x7EBF;&#x6784;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x6211;&#x4EEC;&#x6D4F;&#x89C8;&#x767D;&#x8272;&#x7167;&#x7247;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x4E00;&#x4E2A;&#x50CF;&#x7D20;&#x7684;&#x7EBF;&#x7684;&#x5E95;&#x90E8;&#x6709;&#x4E00;&#x4E2A;&#x6D45;&#x6D45;&#x7684;&#x7070;&#x8272;&#x534A;&#x900F;&#x660E;&#x7684;&#x7EBF;&#xFF0C;&#x4EE5;&#x4FBF;&#x767D;&#x8272;&#x7167;&#x7247;&#x4E0B;&#x4ECD;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x3002;&#x800C;&#x5728;&#x6DF1;&#x8272;&#x7CFB;&#x7167;&#x7247;&#x4E0A;&#x5219;&#x662F;&#x5F88;&#x96BE;&#x53D1;&#x73B0;&#x5B83;&#x7684;&#x5B58;&#x5728;&#xFF08;&#x7EC6;&#x8282;&#x5904;&#x7406;&#x771F;&#x662F;&#x5230;&#x4F4D;&#xFF09;</li>
+<li>&#x540C;&#x65F6;&#xFF0C;&#x65E0;&#x8BBA;&#x600E;&#x6837;&#x6ED1;&#x52A8;&#x56FE;&#x7247;&#x3002;&#x683C;&#x5B50;&#x6807;&#x5C3A;&#x603B;&#x662F;&#x81EA;&#x9002;&#x5E94;&#x7167;&#x7247;&#x4E0E;&#x5C4F;&#x5E55;&#x7684;&#x8FB9;&#x7F18;&#xFF0C;&#x53EA;&#x663E;&#x793A;&#x5728;&#x56FE;&#x7247;&#x5728;&#x5C4F;&#x5E55;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+</blockquote>
+<p>&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x8FD9;&#x4E2A;&#x6548;&#x679C;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x753B;&#x4E00;&#x4E2A;&#x4E5D;&#x5BAB;&#x683C;&#xFF0C;&#x91C7;&#x7528;&#x81EA;&#x5B9A;&#x4E49;view&#x91CD;&#x5199;<code>drawRect</code>&#x753B;&#x4E00;&#x50CF;&#x7D20;&#x7684;&#x7EBF;</p>
+<pre><code>func drawLine(context: CGContext, color: UIColor, width: CGFloat) {
+    let width1 = CGFloatPixelRound(bounds.size.width/3)
+    let width2 = CGFloatPixelRound(bounds.size.width/3 * 2)
+    let height1 = CGFloatPixelRound(bounds.size.height/3)
+    let height2 = CGFloatPixelRound(bounds.size.height/3 * 2)
+
+    // H line 1
+    CGContextSetStrokeColorWithColor(context, color.CGColor)
+    CGContextMoveToPoint(context, 0, height1 + lineOffset)
+    CGContextAddLineToPoint(context, bounds.size.width, height1 + lineOffset)
+    CGContextSetLineWidth(context, width)
+    CGContextStrokePath(context)
+
+    CGContextSaveGState(context)
+
+    // H line 2
+    CGContextSetStrokeColorWithColor(context, color.CGColor)
+    CGContextMoveToPoint(context, 0, height2 + lineOffset)
+    CGContextAddLineToPoint(context, bounds.size.width, height2 + lineOffset)
+    CGContextSetLineWidth(context, width)
+    CGContextStrokePath(context)
+
+    CGContextRestoreGState(context)
+    CGContextSaveGState(context)
+
+
+    // V line 1
+    CGContextSetStrokeColorWithColor(context, color.CGColor)
+    CGContextMoveToPoint(context, width1 + lineOffset, 0)
+    CGContextAddLineToPoint(context, width1 + lineOffset, bounds.size.height)
+    CGContextSetLineWidth(context, width)
+    CGContextStrokePath(context)
+
+    CGContextRestoreGState(context)
+    CGContextSaveGState(context)
+
+    // V line 2
+    CGContextSetStrokeColorWithColor(context, color.CGColor)
+    CGContextMoveToPoint(context, width2 + lineOffset, 0)
+    CGContextAddLineToPoint(context, width2 + lineOffset, bounds.size.height)
+    CGContextSetLineWidth(context, width)
+    CGContextStrokePath(context)
+}
+</code></pre><p>&#x5176;&#x6B21;&#xFF0C;&#x683C;&#x5B50;view&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5728;ScrollView&#x7684;&#x7236;&#x89C6;&#x56FE;&#x4E0A;&#xFF0C;&#x5E76;&#x89C2;&#x5BDF;ScrollView&#x7684;contentOffset&#xFF0C;&#x5BF9;&#x56FE;&#x7247;&#x7684;&#x79FB;&#x52A8;&#x8FDB;&#x884C;&#x8DDF;&#x8E2A;&#x6539;&#x53D8;&#x683C;&#x5B50;&#x7684;&#x4F4D;&#x7F6E;&#x4E0E;&#x5927;&#x5C0F;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x589E;&#x52A0;ScrollView&#x7F29;&#x653E;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x6765;&#x5904;&#x7406;&#x7F29;&#x653E;&#x4E2D;&#x683C;&#x5B50;&#x7684;&#x53D8;&#x5316;</p>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x4E00;&#x5F00;&#x59CB;&#xFF0C;&#x628A;&#x683C;&#x5B50;&#x653E;&#x5728;ScrollView&#x7684;&#x56FE;&#x7247;&#x4E0A;&#x3002;&#x7F29;&#x653E;&#x4E2D;&#xFF0C;&#x56FE;&#x7247;&#x7684;frame&#x7684;&#x53D8;&#x5316;&#x5E76;&#x4E0D;&#x662F;&#x770B;&#x4E0A;&#x53BB;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x800C;&#x662F;&#x6839;&#x636E;scale&#x505A;&#x4E86;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x4EFF;&#x5C04;&#x53D8;&#x6362;&#xFF0C;&#x770B;&#x4E0A;&#x53BB;&#x5927;&#x5C0F;&#x53D8;&#x4E86;&#xFF0C;&#x800C;frame&#x662F;&#x505A;&#x4E86;scale&#x7684;&#x5904;&#x7406;&#x7684;&#x3002;&#x800C;&#x8FD9;&#x6837;&#xFF0C;&#x4E0D;&#x597D;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x683C;&#x5B50;&#x8981;&#x52A0;&#x5728;ScrollView&#x7684;&#x7236;&#x89C6;&#x56FE;&#x4E0A;</p>
+</blockquote>
+<p>&#x5B9E;&#x73B0;&#x7684;&#x6548;&#x679C;&#x5982;&#x4E0B;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/grid.gif" alt="&#x683C;&#x5B50;&#x89C6;&#x56FE;"></p>
+<p><br><br>&#x7167;&#x7247;&#x7684;&#x65CB;&#x8F6C;&#x5C31;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x52A8;&#x753B;&#x6539;&#x53D8;transform&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6709;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x5728;&#x65CB;&#x8F6C;&#x7F16;&#x8F91;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x6B65;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x8BB0;&#x5F55;&#x7684;&#x56FE;&#x7247;&#x7684;&#x4F4D;&#x7F6E;&#x4EE5;&#x53CA;&#x56FE;&#x7247;&#x7684;&#x7F29;&#x653E;&#x5927;&#x5C0F;&#x6765;&#x5BF9;&#x56FE;&#x7247;&#x505A;&#x4E00;&#x6B21;&#x65CB;&#x8F6C;&#x622A;&#x56FE;&#x5904;&#x7406;</p>
+<blockquote>
+<p>Prisma&#x5BF9;&#x4E8E;&#x9009;&#x62E9;&#x56FE;&#x7247;&#x540E;&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x9875;&#x9762;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4E5F;&#x662F;&#x4FDD;&#x7559;&#x4E86;imagePicker&#x9009;&#x62E9;&#x56FE;&#x7247;&#x65F6;&#x7684;&#x7F29;&#x653E;&#x72B6;&#x6001;&#x4E0E;&#x4F4D;&#x7F6E;&#xFF08;&#x5F88;&#x4EBA;&#x6027;&#xFF09;</p>
+</blockquote>
+<pre><code>func cropImageAffterEdit() -&gt; UIImage {
+    // Get the rect
+    var imageRect = CGRectZero
+    let ratio = image.size.width/imageView.contentSize.width
+    var x = fmax(imageView.contentOffset.x, 0)
+    var y = fmax(imageView.contentOffset.y, 0)
+    x = x/imageView.contentSize.width * image.size.width
+    y = y/imageView.contentSize.height * image.size.height
+    imageRect = CGRectMake(x, y, bounds.size.width * ratio, bounds.size.height * ratio)
+
+    // Crop
+    var croppedImage = PMImageManger.cropImageToRect(self.image, toRect: imageRect)
+    // Rotate
+    let imageOrientation = PMImageManger.imageOrientationFromDegress(currentAngle)
+    if imageOrientation != .Up {
+        croppedImage = UIImage.init(CGImage: croppedImage.CGImage!, scale: croppedImage.scale, orientation: imageOrientation)
+    }
+    return croppedImage
+}
+</code></pre><p>&#x5B9E;&#x73B0;&#x6548;&#x679C;&#x5982;&#x4E0B;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/edit.gif" alt="&#x56FE;&#x7247;&#x7F16;&#x8F91;"></p>
+<h4 id="&#x64CD;&#x4F5C;&#x83DC;&#x5355;"><a href="#&#x64CD;&#x4F5C;&#x83DC;&#x5355;" class="headerlink" title="&#x64CD;&#x4F5C;&#x83DC;&#x5355;"></a>&#x64CD;&#x4F5C;&#x83DC;&#x5355;</h4><p>Prisma&#x5BF9;&#x4E8E;&#x5E95;&#x90E8;&#x64CD;&#x4F5C;&#x83DC;&#x5355;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;<code>UIScrollView</code>&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5206;&#x6790;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x53D1;&#x73B0;&#x65E0;&#x8BBA;&#x662F;&#x64CD;&#x4F5C;&#x754C;&#x9762;&#x9876;&#x90E8;&#x7684;&#x6309;&#x94AE;&#x4F4D;&#x7F6E;&#xFF0C;&#x754C;&#x9762;&#x8F6C;&#x573A;&#xFF0C;&#x8FD8;&#x662F;&#x901A;&#x8FC7;&#x8FB9;&#x7F18;&#x4FA7;&#x6ED1;&#x8FD4;&#x56DE;&#x4E0A;&#x770B;&#xFF0C;&#x90FD;&#x89C9;&#x5F97;Prisma&#x91C7;&#x7528;&#x7684;&#x662F;&#x81EA;&#x5B9A;&#x4E49;<code>UINavigationController</code>&#x7684;&#x8F6C;&#x573A;&#x6548;&#x679C;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x5668;&#x5B9E;&#x73B0;&#x64CD;&#x4F5C;&#x754C;&#x9762;&#x529F;&#x80FD;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x9075;&#x4ECE;<code>UIViewControllerAnimatedTransitioning</code>&#x4E0E;<code>UINavigationControllerDelegate</code>&#x4EE3;&#x7406;&#x81EA;&#x5B9A;&#x4E49;&#x8F6C;&#x573A;&#x6548;&#x679C;&#xFF0C;&#x53D6;&#x6D88;&#x8F6C;&#x573A;&#x4E2D;&#x7684;&#x5C42;&#x7EA7;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x5176;&#x6B21;&#xFF0C;&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x4F60;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5E73;&#x79FB;&#x624B;&#x52BF;&#xFF0C;&#x5E76;&#x4E14;&#x53D6;&#x6D88;&#x7CFB;&#x7EDF;&#x8FB9;&#x7F18;&#x8FD4;&#x56DE;&#x624B;&#x52BF;&#x3002;&#x8FBE;&#x5230;&#x63A7;&#x5236;&#x624B;&#x52BF;&#x6ED1;&#x52A8;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x5668;&#x5171;&#x7528;&#x4E00;&#x4E2A;<code>UINavigationBar</code>&#xFF0C;&#x4F1A;&#x6709;&#x9876;&#x90E8;&#x83DC;&#x5355;&#x7684;&#x8FC7;&#x5EA6;&#x52A8;&#x753B;&#x3002;&#x4E3A;&#x4E86;&#x53D6;&#x6D88;&#x8FD9;&#x4E2A;&#x8FC7;&#x5EA6;&#x52A8;&#x753B;&#xFF0C;&#x5F71;&#x85CF;&#x5BFC;&#x822A;&#x680F;&#xFF0C;&#x7ED9;&#x6BCF;&#x4E2A;Controller&#x5355;&#x72EC;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;<code>UINavigationbar</code>&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x65E0;&#x8FC7;&#x6E21;&#x7684;&#x5207;&#x6362;Controller&#x4E86;&#xFF08;<em>&#x540C;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x5F0F;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x7F51;&#x6613;&#x97F3;&#x4E50;&#x7B49;&#x7684;&#x8F6C;&#x573A;&#x6548;&#x679C;</em>&#xFF09;</p>
+<p>&#x5B9E;&#x73B0;&#x6548;&#x679C;&#x5982;&#x4E0B;</p>
+<p><img src="http://blogsrc.error408.com/hexoblog/images/Prisma-&#x6210;&#x529F;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x827A;&#x672F;/interface.gif" alt="&#x8FC7;&#x6E21;&#x52A8;&#x753B;"></p>
+<p>&#x901A;&#x8FC7;&#xFF0C;&#x91CD;&#x5199;Prisma&#xFF0C;&#x8BA9;&#x81EA;&#x5DF1;&#x66F4;&#x52A0;&#x611F;&#x53D7;&#x5230;&#x4E86;Prisma&#x7684;&#x9B45;&#x529B;&#x3002;&#x8FD9;&#x4E00;&#x6837;&#x4E00;&#x4E2A;&#x6781;&#x5176;&#x6CE8;&#x91CD;&#x7EC6;&#x8282;&#x7684;&#x516C;&#x53F8;&#xFF0C;&#x505A;&#x51FA;&#x4E00;&#x4E2A;&#x827A;&#x672F;&#x56FE;&#x7247;&#x5904;&#x7406;&#x7684;APP&#xFF0C;&#x600E;&#x4E48;&#x80FD;&#x591F;&#x4E0D;&#x6D3B;&#xFF1F;&#x56E0;&#x6B64;&#xFF0C;&#x4E5F;&#x8BA9;&#x6211;&#x66F4;&#x52A0;&#x7406;&#x89E3;&#x6CE8;&#x91CD;&#x7EC6;&#x8282;&#x7684;&#x9B45;&#x529B;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x4E5F;&#x5E94;&#x8BE5;&#x8981;&#x6709;&#x4E00;&#x9897;&#x4EA7;&#x54C1;&#x7684;&#x5FC3;&#xFF0C;&#x5BF9;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x8D1F;&#x8D23;&#xFF0C;&#x8BA4;&#x771F;&#x5BF9;&#x5F85;&#x6BCF;&#x4E00;&#x4E2A;&#x7EC6;&#x8282;&#xFF08;&#x9898;&#x5916;&#x5570;&#x55E6;&#x4E86;&#xFF0C;&#x54C8;&#x54C8;&#x1F604;&#xFF09;&#x3002;</p>
+<p><br><br><a href="https://github.com/Roylee-ML/PrismaSimpleImagePicker" target="_blank" rel="external">&#x9879;&#x76EE;&#x5730;&#x5740;GitHub</a></p>
+<p><a href="http://error408.com/">Hexo&#x535A;&#x5BA2;&#x5730;&#x5740;</a></p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/08/03/Prisma-成功的不只是艺术/"
+                    data-title="Prisma--成功的不只是艺术"
+                    data-url="http://error408.com/Roylee-ML.github.io/2016/08/03/Prisma-成功的不只是艺术/"
+                    data-images="http://error408.com/Roylee-ML.github.io/2016/08/03/Prisma-成功的不只是艺术/base/info-bg.jpg"
+                    data-content="&#x524D;&#x8A00;&#x524D;&#x4E00;&#x9635;&#x5B50... | Roylee Blog From A iOS Developer " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/Roylee-ML.github.io/2016/08/02/有条线叫“一个像素”/" data-toggle="tooltip" data-placement="top" title="有条线叫“一个像素”">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/08/03/Prisma-成功的不只是艺术/"
+                        data-title="Prisma--成功的不只是艺术"
+                        data-url="http://error408.com/Roylee-ML.github.io/2016/08/03/Prisma-成功的不只是艺术/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/Roylee-ML.github.io/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#Prisma,自定义相机" title="Prisma,自定义相机">Prisma,自定义相机</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://birdmichael.github.io/" target="_blank">BirdMichael&#39;s Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'error408';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/error408">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/roylee.stillway">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Roylee-ML">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Roylee&#39;s Blog 2016 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> <!-- | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe> -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/Roylee-ML.github.io/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/Roylee-ML.github.io/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/Roylee-ML.github.io/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://error408.com/Roylee-ML.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '63fd5f0468edd7f1983edc897f814664';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
