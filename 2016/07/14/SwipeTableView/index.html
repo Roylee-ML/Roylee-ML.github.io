@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A blog of roylee，一个半路出家的iOS Coder的技术之路">
     <meta name="keyword"  content="Personal blog，iOS，Developer，Coder，博客，iOS开发，技术">
-    <link rel="shortcut icon" href="/roylee/img/favicon.ico">
+    <link rel="shortcut icon" href="/Roylee-ML.github.io/img/favicon.ico">
 
     <title>
         
@@ -17,16 +17,16 @@
         
     </title>
 
-    <link rel="canonical" href="http://roylee.coding.me/roylee/2016/07/14/SwipeTableView/">
+    <link rel="canonical" href="http://error408.com/Roylee-ML.github.io/2016/07/14/SwipeTableView/">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/roylee/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/roylee/css/hux-blog.min.css">
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/hux-blog.min.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/roylee/css/syntax.css">
+    <link rel="stylesheet" href="/Roylee-ML.github.io/css/syntax.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -69,7 +69,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/roylee/">Roylee&#39;s Blog</a>
+            <a class="navbar-brand" href="/Roylee-ML.github.io/">Roylee&#39;s Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,7 +82,7 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/roylee/">Home</a>
+                        <a href="/Roylee-ML.github.io/">Home</a>
                     </li>
 
                     
@@ -92,14 +92,14 @@
 
                         
                         <li>
-                            <a href="/roylee/about/">About</a>
+                            <a href="/Roylee-ML.github.io/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/roylee/tags/">Tags</a>
+                            <a href="/Roylee-ML.github.io/tags/">Tags</a>
                         </li>
                         
                     
@@ -144,7 +144,7 @@
     <!-- Main Content -->
     
 <!-- Image to hack wechat -->
-<!-- <img src="http://roylee.coding.me/roylee/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
@@ -160,9 +160,9 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/roylee/tags/#SwipeTableVeiw" title="SwipeTableVeiw">SwipeTableVeiw</a>
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#SwipeTableVeiw" title="SwipeTableVeiw">SwipeTableVeiw</a>
                         
-                          <a class="tag" href="/roylee/tags/#模拟UIScrollView" title="模拟UIScrollView">模拟UIScrollView</a>
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#模拟UIScrollView" title="模拟UIScrollView">模拟UIScrollView</a>
                         
                     </div>
                     <h1>SwipeTableView</h1>
@@ -210,9 +210,13 @@
 <blockquote>
 <p>&#x5176;&#x4E2D;<code>xx</code>&#x662F;&#x6307;&#x4E0B;&#x62C9;&#x5237;&#x65B0;&#x7EC4;&#x4EF6;RefreshHeader&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5B8C;&#x5168;&#x663E;&#x9732;RefreshHeader&#x5F00;&#x59CB;&#x5237;&#x65B0;&#x7684;&#x9AD8;&#x5EA6;&#xFF08;&#x5982;&#xFF1A;<code>MJRefresh</code> &#x4E3A; <code>MJRefreshHeaderHeight</code>&#xFF0C;<code>SVPullToRefresh</code> &#x4E3A; <code>SVPullToRefreshViewHeight</code>&#xFF09;&#x3002;</p>
 </blockquote>
-<p>&#x6700;&#x540E;&#x5728;&#x6DF7;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x6700;&#x7EC8;&#x53D1;&#x73B0;&#xFF0C;&#x539F;&#x6765;<code>UICollectionView</code>&#x4E0D;&#x652F;&#x6301;&#x901A;&#x8FC7;contentSize&#x5C5E;&#x6027;&#x6765;&#x6539;&#x53D8;contentSize&#x3002;&#x6700;&#x540E;&#x53EA;&#x597D;&#x81EA;&#x5B9A;&#x4E49;<code>STCollectionView</code>&#xFF0C;&#x540C;&#x65F6;&#x652F;&#x6301;&#x8BBE;&#x7F6E;collectionHeaderView&#xFF0C;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x9002;&#x5E94;contentSize&#x3002;&#x5173;&#x4E8E;<code>STCollectionView</code>&#x7684;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x8BE6;&#x7EC6;&#x770B;github&#x793A;&#x4F8B;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x5728;&#x6DF7;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x6700;&#x7EC8;&#x53D1;&#x73B0;&#xFF0C;&#x539F;&#x6765;<code>UICollectionView</code>&#x4E0D;&#x652F;&#x6301;&#x901A;&#x8FC7;contentSize&#x5C5E;&#x6027;&#x6765;&#x6539;&#x53D8;contentSize&#x3002;&#x6700;&#x540E;&#x53EA;&#x597D;&#x81EA;&#x5B9A;&#x4E49;<code>STCollectionView</code>&#xFF0C;&#x5373;&#x652F;&#x6301;&#x8BBE;&#x7F6E;collectionHeaderView&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x9002;&#x5E94;contentSize&#x3002;&#x5173;&#x4E8E;<code>STCollectionView</code>&#x7684;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x8BE6;&#x7EC6;&#x770B;github&#x793A;&#x4F8B;&#x3002;</p>
+<p><br></p>
+<h4 id="&#x6700;&#x540E;&#x8D34;&#x4E0A;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;"><a href="#&#x6700;&#x540E;&#x8D34;&#x4E0A;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;" class="headerlink" title="&#x6700;&#x540E;&#x8D34;&#x4E0A;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;"></a>&#x6700;&#x540E;&#x8D34;&#x4E0A;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;</h4><h5 id="&#x521D;&#x59CB;&#x5316;&#x5E76;&#x8BBE;&#x7F6E;header&#x4E0E;bar"><a href="#&#x521D;&#x59CB;&#x5316;&#x5E76;&#x8BBE;&#x7F6E;header&#x4E0E;bar" class="headerlink" title="&#x521D;&#x59CB;&#x5316;&#x5E76;&#x8BBE;&#x7F6E;header&#x4E0E;bar"></a>&#x521D;&#x59CB;&#x5316;&#x5E76;&#x8BBE;&#x7F6E;header&#x4E0E;bar</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">self.swipeTableView = [[SwipeTableView alloc]initWithFrame:[UIScreen mainScreen].bounds];</div><div class="line">_swipeTableView.delegate = self;</div><div class="line">_swipeTableView.dataSource = self;</div><div class="line">_swipeTableView.shouldAdjustContentSize = YES;</div><div class="line">_swipeTableView.swipeHeaderView = self.tableViewHeader;</div><div class="line">_swipeTableView.swipeHeaderBar = self.segmentBar;</div></pre></td></tr></table></figure>
+<h5 id="&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x6E90;&#x4EE3;&#x7406;&#xFF1A;"><a href="#&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x6E90;&#x4EE3;&#x7406;&#xFF1A;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x6E90;&#x4EE3;&#x7406;&#xFF1A;"></a>&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x6E90;&#x4EE3;&#x7406;&#xFF1A;</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (NSInteger)numberOfItemsInSwipeTableView:(SwipeTableView *)swipeView {</div><div class="line">    return 4;</div><div class="line">}</div><div class="line"></div><div class="line">- (UIScrollView *)swipeTableView:(SwipeTableView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIScrollView *)view {</div><div class="line">    UITableView * tableView = view;</div><div class="line">    if (nil == tableView) {</div><div class="line">        UITableView * tableView = [[UITableView alloc]initWithFrame:swipeView.bounds style:UITableViewStylePlain];</div><div class="line">        tableView.backgroundColor = [UIColor whiteColor];</div><div class="line">        ...</div><div class="line">    }</div><div class="line">    // &#x8FD9;&#x91CC;&#x5237;&#x65B0;&#x6BCF;&#x4E2A;item&#x7684;&#x6570;&#x636E;</div><div class="line">    [tableVeiw refreshWithData:dataArray];</div><div class="line">    ...</div><div class="line">    return tableView;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h5 id="STCollectionView&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;"><a href="#STCollectionView&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="STCollectionView&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;"></a><code>STCollectionView</code>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">MyCollectionView.h</div><div class="line"></div><div class="line">@interface MyCollectionView : STCollectionView</div><div class="line"></div><div class="line">@property (nonatomic, assign) NSInteger numberOfItems;</div><div class="line">@property (nonatomic, assign) BOOL isWaterFlow;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">MyCollectionView.m</div><div class="line"></div><div class="line">- (instancetype)initWithFrame:(CGRect)frame {</div><div class="line"></div><div class="line">    self = [super initWithFrame:frame];</div><div class="line">    if (self) {</div><div class="line">        STCollectionViewFlowLayout * layout = self.st_collectionViewLayout;</div><div class="line">        layout.minimumInteritemSpacing = 5;</div><div class="line">        layout.minimumLineSpacing = 5;</div><div class="line">        layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);</div><div class="line">        self.stDelegate = self;</div><div class="line">        self.stDataSource = self;</div><div class="line">        [self registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:@&quot;item&quot;];</div><div class="line">        [self registerClass:UICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@&quot;header&quot;];</div><div class="line">        [self registerClass:UICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@&quot;footer&quot;];</div><div class="line">    }</div><div class="line">    return self;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line">- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(STCollectionViewFlowLayout *)layout numberOfColumnsInSection:(NSInteger)section {</div><div class="line">    return _numberOfColumns;</div><div class="line">}</div><div class="line"></div><div class="line">- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {</div><div class="line">    return CGSizeMake(0, 100);</div><div class="line">}</div><div class="line"></div><div class="line">- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {</div><div class="line">    return CGSizeMake(kScreenWidth, 35);</div><div class="line">}</div><div class="line"></div><div class="line">- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {</div><div class="line">    return CGSizeMake(kScreenWidth, 35);</div><div class="line">}</div><div class="line"></div><div class="line">- (UICollectionReusableView *)stCollectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {</div><div class="line">    UICollectionReusableView * reusableView = nil;</div><div class="line">    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {</div><div class="line">        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@&quot;header&quot; forIndexPath:indexPath];</div><div class="line">        // custom UI......</div><div class="line">    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {</div><div class="line">        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@&quot;footer&quot; forIndexPath:indexPath];</div><div class="line">        // custom UI......</div><div class="line">    }</div><div class="line">    return reusableView;</div><div class="line">}</div><div class="line"></div><div class="line">- (NSInteger)numberOfSectionsInStCollectionView:(UICollectionView *)collectionView {</div><div class="line">    return _numberOfSections;</div><div class="line">} </div><div class="line"></div><div class="line">- (NSInteger)stCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {</div><div class="line">    return _numberOfItems;</div><div class="line">}</div><div class="line"></div><div class="line">- (UICollectionViewCell *)stCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {</div><div class="line">    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@&quot;item&quot; forIndexPath:indexPath];</div><div class="line">    // do something .......</div><div class="line">    return cell;</div><div class="line">}</div></pre></td></tr></table></figure>
 <!--<div style="font-weight:900">总结</div>-->
-<h4 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h4><p>&#x8FD9;&#x662F;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5B8C;&#x5584;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x975E;&#x5E38;&#x611F;&#x8C22;&#x4F7F;&#x7528;&#x8005;&#x7684;&#x8BA4;&#x540C;&#x4E0E;&#x652F;&#x6301;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x81EA;&#x5DF1;&#x786E;&#x5B9E;&#x5B66;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x4E1C;&#x897F;&#xFF0C;&#x5176;&#x5B9E;&#x5F00;&#x8FD9;&#x4E2A;&#x535A;&#x5BA2;&#x4E5F;&#x662F;&#x6E90;&#x4E8E;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x3002;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#xFF0C;&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#xFF0C;&#x80FD;&#x591F;&#x53C2;&#x4E0E;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x5E76;&#x53BB;&#x4E0D;&#x65AD;&#x7684;&#x5B8C;&#x5584;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x4E2D;&#x5F97;&#x5230;&#x7684;&#x53D7;&#x76CA;&#x5C06;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#x3002;</p>
+<h4 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h4><p>&#x8FD9;&#x662F;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5B8C;&#x5584;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x975E;&#x5E38;&#x611F;&#x8C22;&#x4F7F;&#x7528;&#x8005;&#x7684;&#x8BA4;&#x540C;&#x4E0E;&#x652F;&#x6301;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x81EA;&#x5DF1;&#x786E;&#x5B9E;&#x5B66;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x4E1C;&#x897F;&#x3002;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#xFF0C;&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#xFF0C;&#x80FD;&#x591F;&#x53C2;&#x4E0E;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x5E76;&#x53BB;&#x4E0D;&#x65AD;&#x7684;&#x5B8C;&#x5584;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x4E2D;&#x5F97;&#x5230;&#x7684;&#x53D7;&#x76CA;&#x5C06;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#x3002;</p>
 
 
                 <hr>
@@ -224,8 +228,8 @@
                     style="text-align: right"
                     data-thread-key="2016/07/14/SwipeTableView/"
                     data-title="SwipeTableView"
-                    data-url="http://roylee.coding.me/roylee/2016/07/14/SwipeTableView/"
-                    data-images="http://roylee.coding.me/roylee/2016/07/14/SwipeTableView/base/info-bg.jpg"
+                    data-url="http://error408.com/Roylee-ML.github.io/2016/07/14/SwipeTableView/"
+                    data-images="http://error408.com/Roylee-ML.github.io/2016/07/14/SwipeTableView/base/info-bg.jpg"
                     data-content="
 &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3... | Roylee Blog From A iOS Developer " >
                     <div class="ds-share-inline">
@@ -246,12 +250,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/roylee/2016/07/15/Hexo搭建/" data-toggle="tooltip" data-placement="top" title="Hexo同时部署GitHub 与 Coding">&larr; Previous Post</a>
+                            <a href="/Roylee-ML.github.io/2016/07/15/Hexo搭建/" data-toggle="tooltip" data-placement="top" title="Hexo同时部署GitHub 与 Coding">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/roylee/2016/07/05/我的iOS开发之路/" data-toggle="tooltip" data-placement="top" title="从汽车修理工到iOS开发">Next Post &rarr;</a>
+                            <a href="/Roylee-ML.github.io/2016/07/05/我的iOS开发之路/" data-toggle="tooltip" data-placement="top" title="从汽车修理工到iOS开发">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -262,7 +266,7 @@
                     <div class="ds-thread"
                         data-thread-key="2016/07/14/SwipeTableView/"
                         data-title="SwipeTableView"
-                        data-url="http://roylee.coding.me/roylee/2016/07/14/SwipeTableView/" >
+                        data-url="http://error408.com/Roylee-ML.github.io/2016/07/14/SwipeTableView/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -285,12 +289,12 @@
                 
                 <section>
                     <!-- no hr -->
-                    <h5><a href="/roylee/tags/">FEATURED TAGS</a></h5>
+                    <h5><a href="/Roylee-ML.github.io/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/roylee/tags/#SwipeTableVeiw" title="SwipeTableVeiw">SwipeTableVeiw</a>
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#SwipeTableVeiw" title="SwipeTableVeiw">SwipeTableVeiw</a>
                         
-                          <a class="tag" href="/roylee/tags/#模拟UIScrollView" title="模拟UIScrollView">模拟UIScrollView</a>
+                          <a class="tag" href="/Roylee-ML.github.io/tags/#模拟UIScrollView" title="模拟UIScrollView">模拟UIScrollView</a>
                         
                     </div>
                 </section>
@@ -317,7 +321,7 @@
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User by Hux
-    var _user = 'royleecoding';
+    var _user = 'error408';
 
     // duoshuo comment query.
     var duoshuoQuery = {short_name: _user };
@@ -440,13 +444,13 @@
 </footer>
 
 <!-- jQuery -->
-<script src="/roylee/js/jquery.min.js"></script>
+<script src="/Roylee-ML.github.io/js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/roylee/js/bootstrap.min.js"></script>
+<script src="/Roylee-ML.github.io/js/bootstrap.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/roylee/js/hux-blog.min.js"></script>
+<script src="/Roylee-ML.github.io/js/hux-blog.min.js"></script>
 
 
 <!-- async load function -->
@@ -484,7 +488,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://roylee.coding.me/roylee/js/jquery.tagcloud.js",function(){
+        async("http://error408.com/Roylee-ML.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -512,7 +516,7 @@
 
 <script>
     // dynamic User by Hux
-    var _baId = 'b160ca31636f6292e16158fce09907fe';
+    var _baId = '63fd5f0468edd7f1983edc897f814664';
 
     // Originial
     var _hmt = _hmt || [];
@@ -532,7 +536,7 @@
 
 
 <!-- Image to hack wechat -->
-<img src="http://roylee.coding.me/roylee/img/icon_wechat.png" width="0" height="0" />
+<img src="http://error408.com/Roylee-ML.github.io/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
