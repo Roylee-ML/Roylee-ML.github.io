@@ -1120,8 +1120,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>SwipeTableView</title>
-    <link href="http://error408.com/2016/07/14/swipetableview/"/>
-    <id>http://error408.com/2016/07/14/swipetableview/</id>
+    <link href="http://error408.com/2016/07/14/SwipeTableView/"/>
+    <id>http://error408.com/2016/07/14/SwipeTableView/</id>
     <published>2016-07-14T09:31:11.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
