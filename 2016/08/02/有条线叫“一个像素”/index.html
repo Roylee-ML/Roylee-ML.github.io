@@ -334,6 +334,25 @@
 
 
 
+<!-- Gitalk 公共JS代码 start (一个网页只需插入一次) -->
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'a09e7cc0e4b945f5e6d3',
+        clientSecret: 'b99fba2d4ccc836f6ffb04e3194e96646b2bd11d',
+        id: location.pathname,
+        repo: 'blog-comments',
+        owner: 'Roylee-ML',
+        admin: 'Roylee-ML'
+        distractionFreeMode: true
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+<!-- Gitalk 公共JS代码 end -->
+
 
 
     <!-- Footer -->
