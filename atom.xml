@@ -17,8 +17,8 @@
   
   <entry>
     <title>我与阿里的两次邂逅</title>
-    <link href="http://error408.com/2018/03/07/%E6%88%91%E4%B8%8E%E9%98%BF%E9%87%8C%E7%9A%84%E4%B8%A4%E6%AC%A1%E9%82%82%E9%80%85/"/>
-    <id>http://error408.com/2018/03/07/我与阿里的两次邂逅/</id>
+    <link href="http://error408.com/2018/03/07/ali-interview/"/>
+    <id>http://error408.com/2018/03/07/ali-interview/</id>
     <published>2018-03-07T14:37:40.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -95,8 +95,8 @@
   
   <entry>
     <title>Swift中使用Method Swizzling</title>
-    <link href="http://error408.com/2016/08/04/Swift%20Method%20Swizzling/"/>
-    <id>http://error408.com/2016/08/04/Swift Method Swizzling/</id>
+    <link href="http://error408.com/2016/08/04/swift-swizzle/"/>
+    <id>http://error408.com/2016/08/04/swift-swizzle/</id>
     <published>2016-08-04T09:15:35.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -241,8 +241,8 @@ print(methodSwizzled())  //1
   
   <entry>
     <title>Prisma--成功的不只是艺术</title>
-    <link href="http://error408.com/2016/08/03/Prisma-%E6%88%90%E5%8A%9F%E7%9A%84%E4%B8%8D%E5%8F%AA%E6%98%AF%E8%89%BA%E6%9C%AF/"/>
-    <id>http://error408.com/2016/08/03/Prisma-成功的不只是艺术/</id>
+    <link href="http://error408.com/2016/08/03/prisma/"/>
+    <id>http://error408.com/2016/08/03/prisma/</id>
     <published>2016-08-03T12:13:13.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -807,8 +807,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>有条线叫“一个像素”</title>
-    <link href="http://error408.com/2016/08/02/%E6%9C%89%E6%9D%A1%E7%BA%BF%E5%8F%AB%E2%80%9C%E4%B8%80%E4%B8%AA%E5%83%8F%E7%B4%A0%E2%80%9D/"/>
-    <id>http://error408.com/2016/08/02/有条线叫“一个像素”/</id>
+    <link href="http://error408.com/2016/08/02/one-point/"/>
+    <id>http://error408.com/2016/08/02/one-point/</id>
     <published>2016-08-02T12:37:21.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -870,8 +870,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>Hexo七牛图床使用</title>
-    <link href="http://error408.com/2016/08/02/Hexo%E4%B8%83%E7%89%9B%E5%9B%BE%E5%BA%8A%E4%BD%BF%E7%94%A8/"/>
-    <id>http://error408.com/2016/08/02/Hexo七牛图床使用/</id>
+    <link href="http://error408.com/2016/08/02/hexo-qiniu/"/>
+    <id>http://error408.com/2016/08/02/hexo-qiniu/</id>
     <published>2016-08-02T08:20:29.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -950,8 +950,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>学习Swift的正确姿势</title>
-    <link href="http://error408.com/2016/07/20/%E5%AD%A6%E4%B9%A0Swift%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/"/>
-    <id>http://error408.com/2016/07/20/学习Swift的正确姿势/</id>
+    <link href="http://error408.com/2016/07/20/learn-swift/"/>
+    <id>http://error408.com/2016/07/20/learn-swift/</id>
     <published>2016-07-20T02:15:42.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -994,8 +994,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>Hexo同时部署GitHub 与 Coding</title>
-    <link href="http://error408.com/2016/07/15/Hexo%E6%90%AD%E5%BB%BA/"/>
-    <id>http://error408.com/2016/07/15/Hexo搭建/</id>
+    <link href="http://error408.com/2016/07/15/hexo-build/"/>
+    <id>http://error408.com/2016/07/15/hexo-build/</id>
     <published>2016-07-15T01:22:05.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -1120,8 +1120,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>SwipeTableView</title>
-    <link href="http://error408.com/2016/07/14/SwipeTableView/"/>
-    <id>http://error408.com/2016/07/14/SwipeTableView/</id>
+    <link href="http://error408.com/2016/07/14/swipetableview/"/>
+    <id>http://error408.com/2016/07/14/swipetableview/</id>
     <published>2016-07-14T09:31:11.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
@@ -1173,8 +1173,8 @@ class func photoAssetsForAlbum(collection: PHAssetCollection) -&amp;gt; [PHAsset
   
   <entry>
     <title>从汽车修理工到iOS开发</title>
-    <link href="http://error408.com/2016/07/05/%E6%88%91%E7%9A%84iOS%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
-    <id>http://error408.com/2016/07/05/我的iOS开发之路/</id>
+    <link href="http://error408.com/2016/07/05/my-ios/"/>
+    <id>http://error408.com/2016/07/05/my-ios/</id>
     <published>2016-07-05T15:35:02.000Z</published>
     <updated>2018-03-26T14:19:17.000Z</updated>
     
